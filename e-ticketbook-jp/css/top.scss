@@ -1,0 +1,1332 @@
+@charset "UTF-8";
+@import "_mixin";
+
+.ticket {
+  background: $c2;
+
+  &Wrap {
+    padding: sp(50) 0 sp(130);
+  }
+
+  h2 {
+    font-size: sp(40);
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    color: #fff;
+    letter-spacing: .1em;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: sp(56);
+      height: sp(56);
+      background: url(../img/common/icon11.png) no-repeat;
+      background-size: contain;
+      background-position: center bottom;
+      margin-right: sp(20);
+    }
+  }
+}
+.ticketBoxlist {
+  padding-top: sp(70);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  &.just_one {
+    justify-content: center;
+    &::before,&::after {
+      content: none;
+    }
+  }
+
+  li {
+    width: sp(340);
+    background: #fff;
+    border-radius: sp(12);
+    overflow: hidden;
+    border-radius: 8px;
+    &:not(:first-child):not(:nth-of-type(2)) {
+        margin-top: sp(20);
+    }
+    a {
+        display: block;
+    }
+    &.is-sold {
+      background-color: #D2DDDD;
+      color: #fff;
+      a {
+        pointer-events: none;
+        color: #fff;
+      }
+    }
+    &.is-new,
+    &.is-accept {
+      .ticketBoxlist_txt {
+        > span {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+.ticketBoxlist-l {
+  padding: sp(80) 0 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  li {
+    width: sp(320);
+    min-height: sp(380);
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  li:nth-of-type(n+3) {
+    margin-top: sp(22);
+  }
+}
+.ticketBoxlist_img {
+  border-bottom: solid 1px#eee;
+  img {
+      width: 100%;
+  }
+}
+
+.ticketBoxlist_txt {
+  padding: sp(15) sp(22.5) sp(22.5);
+  font-size: sp(25);
+  font-weight: 500;
+  color: #1A1A1A;
+  line-height: ceil-unit(28, 21, 'em');
+  letter-spacing: .05em;
+  &-center {
+    text-align: center;
+  }
+  > span {
+      display: none;
+      margin-bottom: sp(5);
+      > span {
+        display: inline-block;
+        padding: sp(4) sp(10);
+        font-size: sp(18);
+        font-weight: normal;
+        line-height: 1;
+        letter-spacing: .03em;
+        &.is-new {
+          color: #fff;
+          background-color: #ed1c24;
+        }
+        &.is-accept {
+          color: #323232;
+          background-color: #ffde00;
+        }
+      }
+  }
+}
+.ticketBoxlist-only {
+  margin-top: sp(80);
+  background: #fff;
+  border-radius: 2.5vw;
+
+  + .ticketBoxlist-only {
+    margin-top: sp(50);
+  }
+
+  .ticketBoxlist_txt {
+    padding: sp(35) sp(10);
+    font-size: sp(32);
+  }
+  .line_one_three {
+    padding: sp(91) sp(10);
+  }
+}
+.show_more {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: sp(500);
+  margin: sp(60) auto 0;
+  padding: sp(25) 0;
+  font-size: sp(26);
+  border: solid 1px #fff;
+  border-radius: 50px;
+  letter-spacing: .1em;
+  &::after {
+    content: "+";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: sp(40);
+    transform: translateY(-50%);
+    font-size: sp(34);
+    font-weight: normal;
+  }
+}
+// adnimation
+.page{
+    background-color:#0099FF;
+}
+.load {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 1000;
+}
+.bg {
+    // background-color: #000;
+}
+// ページ読み込み時アニメーション
+    .top_animation {
+        height: 100%;
+        background: #fff url(/img/top/top_animation_bg.png) 100% 0 repeat-y;
+    }
+    .top_animation_inr {
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        width: 100%;
+        height: 100vh;
+        // position: fixed;
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+        // z-index: 1000;
+        }
+        .top_animation_logo_wrap {
+            display: flex;
+            align-items: flex-end;
+            width: 334px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        .anime_text {
+            display: none;
+            position: relative;
+        }
+        .anime_shadow {
+            max-width: inherit;
+            position: absolute;
+            z-index: -1;
+        }
+        .anime_logo {
+            width: 44px;
+            margin-right: 8px;
+            opacity: 0;
+            &.is-active {
+                animation: bounceInDown .8s 0.2s ease-in-out forwards;
+            }
+        }
+        .anime_t1 {
+            width: 21px;
+            .anime_shadow {
+                top: -6px;
+                left: -6px;
+                width: 74px;
+            }
+        }
+        .anime_i {
+            width: 12px;
+            margin-right: 1px;
+            .anime_shadow {
+                top: -8px;
+                left: -4px;
+                width: 60px;
+            }
+        }
+        .anime_c {
+            width: 27px;
+            margin-right: 2px;
+            .anime_shadow {
+                top: -8px;
+                left: -7px;
+                width: 73px;
+            }
+        }
+        .anime_k1 {
+            width: 32px;
+            margin-right: -2px;
+            .anime_shadow {
+                top: -8px;
+                left: -8px;
+                width: 89px;
+            }
+        }
+        .anime_e {
+            width: 31px;
+            margin-right: 1px;
+            .anime_shadow {
+                top: -8px;
+                left: -8px;
+                width: 87px;
+            }
+        }
+        .anime_t2 {
+            width: 21px;
+            margin-right: 1px;
+            .anime_shadow {
+                top: -4px;
+                left: -5px;
+                width: 78px;
+            }
+        }
+        .anime_b {
+            width: 32px;
+            margin-right: 1px;
+            .anime_shadow {
+                top: -7px;
+                left: -7px;
+                width: 88px;
+            }
+        }
+        .anime_o1 {
+            width: 33px;
+            margin-right: 1px;
+            .anime_shadow {
+                top: -9px;
+                left: -10px;
+                width: 84px;
+            }
+        }
+        .anime_o2 {
+            width: 33px;
+            margin-right: 3px;
+            .anime_shadow {
+                top: -9px;
+                left: -10px;
+                width: 84px;
+            }
+        }
+        .anime_k2 {
+            width: 31px;
+            .anime_shadow {
+                top: -7px;
+                left: -7px;
+                width: 86px;
+            }
+        }
+        @keyframes bounceInDown {
+            0%,20%,30%,50%,60%,75%,85%,to {
+                animation-timing-function: cubic-bezier(.215,.61,.355,1);
+                transform-origin: center bottom;
+            }
+
+            0% {
+                opacity: 0;
+                transform: translate3d(0,-150px,0) scaleY(1.3)
+            }
+
+            20% {
+                opacity: 1;
+                // transform: translate3d(0,-10px,0) scaleY(1.3)
+            }
+
+            30% {
+                transform: translate3d(0,5px,0) scaleY(.8)
+            }
+
+            // 75% {
+            //     transform: translate3d(0,-18px,0) scaleY(1.1)
+            // }
+
+            50% {
+                transform: translate3d(0,-18px,0) scaleY(1.1)
+            }
+
+            55% {
+                transform: translate3d(0,-18px,0) scaleY(1.1)
+            }
+
+            75% {
+                transform: translate3d(0,5px,0) scaleY(.8)
+            }
+
+            85% {
+                transform: translate3d(0,-8px,0) scaleY(1.05)
+            }
+
+            to {
+                transform: translateZ(0) scaleY(1);
+                opacity: 1;
+            }
+        }
+        @media screen and (max-width:750px) {
+            .top_animation {
+                background: #fff;
+            }
+            .top_animation_inr {
+                position: relative;
+            }
+        .top_animation_logo_wrap {
+            width: sp(464);
+            top: auto;
+            bottom: 50%;
+        }
+        .anime_logo {
+            width: sp(62);
+            margin-right: sp(12);
+        }
+        .anime_t1 {
+            bottom: sp(-1);
+            width: sp(28);
+            margin-right: sp(1);
+            .anime_shadow {
+                top: sp(-6);
+                left: sp(-6);
+                width: sp(90);
+            }
+        }
+        .anime_i {
+            width: sp(15);
+            margin-right: sp(2);
+            .anime_shadow {
+                top: sp(-6);
+                left: sp(-6);
+                width: sp(72);
+            }
+        }
+        .anime_c {
+            width: sp(36);
+            margin-right: sp(4);
+            .anime_shadow {
+                top: sp(-6);
+                left: sp(-6);
+                width: sp(100);
+            }
+        }
+        .anime_k1 {
+            width: sp(44);
+            margin-right: sp(-2);
+            .anime_shadow {
+                top: sp(-6);
+                left: sp(-6);
+                width: sp(115);
+            }
+        }
+        .anime_e {
+            width: sp(43);
+            margin-right: sp(1);
+            .anime_shadow {
+                top: sp(-6);
+                left: sp(-6);
+                width: sp(100);
+            }
+        }
+        .anime_t2 {
+            bottom: sp(-1);
+            width: sp(28);
+            margin-right: sp(3);
+            .anime_shadow {
+                top: sp(-6);
+                left: sp(-6);
+                width: sp(90);
+            }
+        }
+        .anime_b {
+            bottom: sp(-1);
+            width: sp(43);
+            margin-right: sp(3);
+            .anime_shadow {
+                top: sp(-6);
+                left: sp(-6);
+                width: sp(100);
+            }
+        }
+        .anime_o1 {
+            bottom: sp(-1);
+            width: sp(44);
+            margin-right: sp(3);
+            .anime_shadow {
+                top: sp(-6);
+                left: sp(-6);
+                width: sp(100);
+            }
+        }
+        .anime_o2 {
+            bottom: sp(-1);
+            width: sp(44);
+            margin-right: sp(5);
+            .anime_shadow {
+                top: sp(-6);
+                left: sp(-6);
+                width: sp(100);
+            }
+        }
+        .anime_k2 {
+            width: sp(44);
+            .anime_shadow {
+                top: sp(-6);
+                left: sp(-6);
+                width: sp(115);
+            }
+        }
+    }
+@media screen and (min-width:751px) {
+  .ticket {
+    background: $c2;
+
+    &Wrap {
+      padding: ceil-unit(80, $lgInner) 0;
+    }
+
+    h2 {
+      font-size: pc(26);
+
+      &::before {
+        width: pc(36);
+        height: pc(22);
+        margin-right: ceil-unit(10, $lgInner)
+      }
+    }
+  }
+  .ticketBoxlist {
+    padding: ceil-unit(60, $lgInner) 0 0;
+    margin-bottom: ceil-unit(-10, $lgInner);
+    &::before{
+      content:"";
+      display: block;
+      width: ceil-unit(254, $lgInner);
+      order:1;
+    }
+    &::after{
+      content:"";
+      display: block;
+      width: ceil-unit(254, $lgInner);
+  }
+
+    li {
+      width: ceil-unit(254, $lgInner);
+      border-radius: 6px;
+      overflow: hidden;
+      &:not(:first-child):not(:nth-of-type(2)) {
+        margin-top: ceil-unit(10, $lgInner);
+      }
+      &:nth-of-type(3),&:nth-of-type(4) {
+        margin-top: 0 !important;
+      }
+      > a {
+        height: 100%;
+      }
+    }
+  }
+
+  .ticketBoxlist-l {
+    padding: ceil-unit(60, $lgInner) 0 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: -15px;
+    &::before{
+      content:"";
+      display: block;
+      width: ceil-unit(250, $lgInner);
+      order:1;
+    }
+    &::after{
+      content:"";
+      display: block;
+      width: ceil-unit(250, $lgInner);
+  }
+
+    li {
+      width: ceil-unit(250, $lgInner);
+      min-height: pc(250);
+      margin-bottom: 15px;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      > a {
+        display: block;
+        height: 100%;
+      }
+    }
+
+    li:nth-of-type(n+3) {
+      margin-top: 0;
+    }
+  }
+  .ticketBoxlist_txt {
+    padding: 0;
+    font-size: pc(16);
+    line-height: ceil-unit(16, 11.4, "em");
+    p {
+      padding: pc(20);
+    }
+    > span {
+      margin: pc(8) pc(20) pc(2);
+      > span {
+        padding: pc(3) pc(4);
+        font-size: pc(11);
+      }
+    }
+    .is-new &,
+    .is-accept & {
+      &::before {
+        padding: pc(8) 0;
+        font-size: pc(15);
+      }
+      p {
+          padding-top: 0;
+      }
+    }
+  }
+  .ticketBoxlist-only {
+    display: flex;
+    width: ceil-unit(850, $lgInner);
+    margin: ceil-unit(60, $lgInner) auto 0;
+    background: #fff;
+    border-radius: 10px;
+
+    + .ticketBoxlist-only {
+        margin-top: ceil-unit(30, $lgInner);
+    }
+    .ticketBoxlist_img {
+      flex-shrink: 0;
+      width: ceil-unit(443.5, 850);
+    }
+
+    .ticketBoxlist_txt {
+      padding: 0;
+      font-size: pc(18);
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-weight: bold;
+        text-align: left;
+      }
+    }
+    .line_one_three {
+      padding: 0;
+    }
+  }
+  .show_more {
+    width: pc(300);
+    margin: pc(40) auto 0;
+    padding: pc(20) 0;
+    font-size: pc(14);
+    border-radius: 40px;
+    &::after {
+      right: pc(40);
+      font-size: pc(24);
+    }
+  }
+}
+
+@media screen and (min-width:1251px) {
+  .ticket {
+    &Wrap {
+      padding: 80px 0;
+    }
+    h2 {
+      font-size: 26px;
+
+      &::before {
+        width: 36px;
+        height: 22px;
+        margin-right: 10px;
+      }
+    }
+  }
+  .ticketBoxlist {
+    padding: 60px 0 0;
+    margin-bottom: -10px;
+    &::before{
+      width: 254px;
+    }
+    &::after{
+      width: 254px;
+    }
+    li {
+      width: 254px;
+      &:not(:first-child):not(:nth-of-type(2)) {
+        margin-top: 10px;
+      }
+    }
+  }
+  .ticketBoxlist_txt {
+    font-size: 16px;
+    p {
+      padding: 20px;
+    }
+    > span {
+      margin: 8px 20px 2px;
+      > span {
+        padding: 3px 4px;
+        font-size: 11px;
+      }
+    }
+    .is-new & {
+      &::before {
+        padding: 8px 0;
+        font-size: 15px;
+      }
+    }
+  }
+  .ticketBoxlist-only {
+    .ticketBoxlist_txt {
+      padding: 0;
+      font-size: 18px;
+    }
+  }
+  .show_more {
+    width: 300px;
+    margin: 40px auto 0;
+    padding: 20px 0;
+    font-size: 14px;
+    cursor: pointer;
+    &::after {
+      right: 40px;
+      font-size: 24px;
+    }
+  }
+}
+// 重要なお知らせ
+.information_wrap {
+    padding: sp(20);
+    padding-bottom: 0;
+}
+.information_inr {
+  position: relative;
+  background-color: #fff;
+}
+.information_ttl {
+  position: relative;
+  display: inline-block;
+  padding: sp(5) sp(86) sp(5) sp(40);
+  font-size: sp(25);
+  font-weight: bold;
+  color: #fff;
+  background-color: $c2;
+  &::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-style: solid;
+    border-width: 0 0 sp(54) sp(34);
+    border-color: transparent transparent #fff transparent;
+  }
+}
+.information_cont {
+  padding: sp(16.5) sp(20);
+}
+.information_detail {
+  color: $c2;
+}
+.information_date {
+  font-size: sp(22);
+}
+.inromation_detail_link {
+  position: relative;
+  font-size: sp(24);
+  line-height: ceil-unit(40, 24, "em");
+  a {
+    color: $c2;
+    text-decoration: underline;
+  }
+}
+.informatioin_link {
+  position: absolute;
+  top: sp(20);
+  right: sp(20);
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: sp(22);
+    height: sp(8);
+    background: url(../img/common/arrow05.png) no-repeat;
+    background-size: 100% auto;
+  }
+  a {
+    padding-right: sp(30);
+    color: $c2;
+  }
+}
+@media screen and (min-width:751px) {
+  .information_wrap {
+    display: flex;
+    width: pc(1082);
+    margin: 0 auto;
+    padding: 0;
+    padding-top: pc(15);
+  }
+  .information_inr {
+    display: flex;
+    width: 100%;
+  }
+  .information_ttl {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: pc(16) pc(20);
+    font-size: pc(12);
+    line-height: 1;
+    &::before {
+      content: none;
+    }
+  }
+  .information_cont {
+    display: flex;
+    align-items: center;
+    padding: pc(16) pc(20);
+  }
+  .information_detail {
+    display: flex;
+    align-items: center;
+  }
+  .information_date {
+    margin-right: pc(14);
+    font-size: pc(13);
+  }
+  .inromation_detail_link {
+    font-size: pc(13);
+    padding-right: 0;
+    &::before {
+      content: none;
+    }
+  }
+  .informatioin_link {
+    position: absolute;
+    top: 50%;
+    right: pc(15);
+    transform: translateY(-50%);
+    font-size: pc(12);
+    &::before {
+      width: pc(14);
+      height: pc(4);
+      background-size: 100% auto;
+    }
+    a {
+      padding-right: pc(50);
+    }
+  }
+}
+@media screen and (min-width:1251px) {
+  .information_wrap {
+    width: 1090px;
+    padding-top: 15px;
+  }
+  .information_ttl {
+    padding: 16px 20px;
+    font-size: 12px;
+  }
+  .information_cont {
+    padding: 16px 20px;
+  }
+  .information_date {
+    margin-right: 14px;
+    font-size: 13px;
+  }
+  .inromation_detail_link {
+    font-size: 13px;
+  }
+  .informatioin_link {
+    right: 20px;
+    font-size: 12px;
+    &::before {
+      width: 14px;
+      height: 4px;
+      background-size: contain;
+    }
+    a {
+      padding-right: 18px;
+      text-decoration: none;
+    }
+  }
+}
+// おすすめのチケット
+.recommend {
+  padding: sp(100) sp(40);
+  background-color: $c2;
+  h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: sp(60);
+    font-size: sp(40);
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: sp(53);
+      height: sp(34);
+      background: url(../img/common/icon11.png) no-repeat 0 0;
+      background-size: contain;
+      margin-right: sp(15);
+    }
+  }
+}
+.recommend_list {
+  > li {
+    position: relative;
+    padding: sp(10) sp(22);
+    background-color: #f5f8fd;
+    &:not(:first-child) {
+      margin-top: sp(10);
+    }
+    a {
+      display: flex;
+      color: #323232;
+    }
+    &.is_new,
+    &.is_accept {
+      .recommend_txt {
+        padding-top: sp(45);
+        span {
+          display: block;
+          position: absolute;
+          top: sp(5);
+          left: sp(23);
+          padding: sp(3.75) sp(7.5);
+          font-size: sp(18);
+          font-weight: normal;
+          line-height: 1.45;
+        }
+      }
+    }
+    &.is_new {
+      .recommend_txt {
+        span {
+          color: #fff;
+          background-color: #ed1c24;
+        }
+      }
+    }
+    &.is_accept {
+      .recommend_txt {
+        span {
+          color: #323232;
+          background-color: #ffde00;
+        }
+      }
+    }
+  }
+}
+.recommend_img {
+  width: sp(207);
+  flex-shrink: 0;
+}
+.recommend_txt {
+  position: relative;
+  padding-top: sp(10);
+  padding-left: sp(26.25);
+  font-size: sp(26.3);
+  font-weight: 500;
+  line-height: ceil-unit(32, 24, "em");
+  span {
+    display: none;
+  }
+}
+@media screen and (min-width:751px) {
+  .recommend {
+    padding: pc(75) 0;
+    h2 {
+      margin-bottom: pc(50);
+      font-size: pc(26);
+      &::before {
+        width: pc(36);
+        height: pc(22);
+        margin-right: pc(10);
+      }
+    }
+  }
+  .recommend_list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: pc(1050);
+    margin: 0 auto;
+    > li {
+      width: pc(520);
+      padding: 0;
+      &:not(:first-child),
+      &:not(:nth-of-type(2)) {
+        margin-top: pc(10);
+      }
+      &.is_new,
+      &.is_accept {
+        .recommend_txt {
+          padding-top: pc(18);
+          padding-right: pc(65);
+          span {
+            top: pc(6);
+            left: auto;
+            right: pc(6);
+            padding: pc(2) pc(4);
+            font-size: pc(11);
+          }
+        }
+      }
+      &.is_new {
+        .recommend_txt {
+          span {
+            color: #fff;
+            background-color: #ed1c24;
+          }
+        }
+      }
+      &.is_accept {
+        .recommend_txt {
+          span {
+            color: #323232;
+            background-color: #ffde00;
+          }
+        }
+      }
+    }
+  }
+  .recommend_img {
+    width: pc(160);
+  }
+  .recommend_txt {
+    width: 100%;
+    padding: pc(15);
+    font-size: pc(17);
+    line-height: ceil-unit(20, 13, "em");
+  }
+}
+@media screen and (min-width: 1251px) {
+  .recommend {
+    padding: 75px 0;
+    h2 {
+      margin-bottom: 50px;
+      font-size: 26px;
+      &::before {
+        width: 36px;
+        height: 22px;
+        margin-right: 10px;
+      }
+    }
+  }
+  .recommend_list {
+    width: 1050px;
+    > li {
+      width: 520px;
+      padding: 0;
+      &:not(:first-child):not(:nth-of-type(2)) {
+        margin-top: 10px;
+      }
+      &.is_new,
+      &.is_accept {
+        .recommend_txt {
+          padding-top: 18px;
+          padding-right: 50px;
+          span {
+            top: 6px;
+            right:6px;
+            padding: 2px 4px;
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
+  .recommend_img {
+    width: 160px;
+  }
+  .recommend_txt {
+    padding: 15px;
+    font-size: 17px;
+    line-height: ceil-unit(18, 13, "em");
+  }
+}
+// 近くで開催されるイベント
+.event {
+    padding: sp(115) 0 sp(120);
+    background-color: #fff;
+}
+.sec_event_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: sp(70);
+    font-size: sp(40);
+    font-weight: bold;
+    color: $c2;
+    line-height: 1;
+    &::before {
+        content: "";
+        display: block;
+        width: sp(37);
+        height: sp(47);
+        margin-right: sp(16);
+        background: url(../img/common/icon_area.png) no-repeat 50% 0;
+        background-size: contain;
+    }
+}
+.area_wrap {
+    margin-bottom: sp(30);
+}
+.area_name_wrap {
+    position: relative;
+    width: sp(353);
+    border: 1px solid $c2;
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: sp(15);
+        transform: translateY(-50%);
+        width: sp(36);
+        height: sp(28);
+        background: url(../img/common/arrow_select.png) no-repeat 0 0;
+        background-size: contain;
+        pointer-events: none;
+    }
+    select {
+        width: 100%;
+        padding: sp(20);
+        appearance: none;
+        border: 0;
+        outline:none;
+        vertical-align: middle;
+        font-size: 16px;
+        font-weight: bold;
+        color: $c2;
+        background-color: transparent;
+        letter-spacing: .1em;
+        line-height: 1;
+        &::-ms-expand {
+            display: none;
+        }
+        option {
+            font-weight: normal;
+            &:checked {
+                color: $c2;
+            }
+        }
+    }
+}
+.area_annotation {
+    margin-top: sp(20);
+    font-size: sp(22);
+    line-height: 1em;
+}
+.event_list {
+    border-top: dotted 1px $c2;
+    > li {
+        &:nth-of-type(even) {
+            background-color: #f5f8fd;
+        }
+    }
+}
+.event_detail {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    padding: sp(40) sp(20);
+    font-size: sp(28);
+    color: $c2;
+    border-bottom: dotted 1px $c2;
+    &::after {
+        content: "";
+        display: block;
+        width: sp(30);
+        height: sp(30);
+        margin-top: sp(8);
+        margin-left: auto;
+        background: url(../img/common/arrow_circle.png) no-repeat 0 0;
+        background-size: 100% auto;
+    }
+}
+.event_date_wrap {
+    width: sp(100);
+    text-align: center;
+}
+.event_date {
+    line-height: 1.2;
+}
+.weekday {
+    display: inline-block;
+    padding-top: sp(8);
+    font-size: sp(26);
+}
+.event_date_label {
+    color: #323232;
+    display: inline-block;
+    margin-top: sp(16);
+    padding: sp(6) sp(16);
+    font-size: sp(18);
+    font-weight: normal;
+    background-color: #ffde00;
+    letter-spacing: .03em;
+    line-height: 1;
+}
+.event_cont {
+    width: sp(425);
+    padding-left: sp(40);
+}
+.kogyo_mei {
+    font-size: sp(28);
+    font-weight: bold;
+    line-height: 1.4em;
+}
+.hall_mei {
+    margin-top: sp(10);
+    font-size: sp(24);
+    line-height: ceil-unit(36, 24, 'em');
+}
+@media screen and (min-width:751px) {
+    .event {
+        padding: pc(75) 0 pc(80);
+    }
+    .sec_event_title {
+        margin-bottom: pc(30);
+        font-size: pc(26);
+        &::before {
+            width: pc(24);
+            height: pc(32);
+            margin-right: pc(12);
+        }
+    }
+    .area_wrap {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: pc(15);
+    }
+    .area_name_wrap {
+        width: pc(166);
+        &::before {
+            right: pc(10);
+            width: pc(18);
+            height: pc(14);
+        }
+        select {
+            padding: pc(10);
+            font-size: pc(14);
+        }
+    }
+    .area_annotation {
+        margin-top: 0;
+        margin-left: pc(20);
+        font-size: pc(13);
+    }
+    .event_detail {
+        justify-content: left;
+        padding: pc(20) pc(60);
+        font-size: pc(15);
+        &::after {
+            width: pc(20);
+            height: pc(20);
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: auto;
+        }
+    }
+    .event_date_wrap {
+        display: flex;
+        align-items: flex-start;
+        width: auto;
+        min-width: pc(130);
+    }
+    .weekday {
+        display: block;
+        padding-top: pc(2);
+        font-size: pc(13);
+    }
+    .event_date_label {
+        margin-top: pc(-6);
+        margin-left: pc(12);
+        padding: pc(5);
+        font-size: pc(10);
+    }
+    .event_cont {
+        display: flex;
+        align-items: flex-start;
+        padding-left: 0;
+    }
+    .kogyo_mei {
+        width: pc(350);
+        padding-right: pc(50);
+        font-size: pc(14);
+        line-height: ceil-unit(23, 16, "em");
+    }
+    .hall_mei {
+        width: pc(350);
+        margin-top: 0;
+        font-size: pc(13);
+        line-height: ceil-unit(20, 13, 'em');
+    }
+}
+@media screen and (min-width:1251px) {
+    .event {
+        padding: 75px 0 80px;
+    }
+    .sec_event_title {
+        margin-bottom: 30px;
+        font-size: 26px;
+        &::before {
+            width: 24px;
+            height: 32px;
+            margin-right: 12px;
+        }
+    }
+    .area_name_wrap {
+        width: 166px;
+        &::before {
+            right: 10px;
+            width: 18px;
+            height: 14px;
+        }
+        select {
+            padding: 10px;
+            font-size: 14px;
+        }
+    }
+    .area_annotation {
+        margin-left: 20px;
+        font-size: 13px;
+    }
+    .event_detail {
+        padding: 20px 60px;
+        font-size: 15px;
+        &::after {
+          width: 20px;
+          height: 20px;
+        }
+    }
+    .event_date_wrap {
+        min-width: 130px;
+    }
+    .weekday {
+        padding-top: 2px;
+        font-size: 13px;
+    }
+    .event_date_label {
+        margin-top: -2px;
+        margin-left: 12px;
+        padding: 5px;
+        font-size: 10px;
+    }
+    .kogyo_mei {
+        width: 350px;
+        padding-right: 50px;
+        font-size: 14px;
+    }
+    .hall_mei {
+        width: 350px;
+        font-size: 13px;
+    }
+}

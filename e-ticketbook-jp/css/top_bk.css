@@ -1,0 +1,163 @@
+.slick-dots {
+  display: none !important; }
+
+.ticket {
+  background: #0099FF; }
+  .ticketWrap {
+    padding: 16vw 0 21.33333vw; }
+  .ticket h2 {
+    font-size: 5.86667vw;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    color: #fff; }
+    .ticket h2::before {
+      content: '';
+      display: inline-block;
+      width: 7.46667vw;
+      height: 7.46667vw;
+      background: url(../img/common/icon11.png) no-repeat;
+      background-size: contain;
+      background-position: center bottom;
+      margin-right: 2.66667vw; }
+
+@media screen and (min-width: 751px) {
+  .ticket {
+    background: #0099FF; }
+    .ticketWrap {
+      padding: 9.715% 0 12.381%; }
+    .ticket h2 {
+      font-size: 2.24vw;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1;
+      color: #fff; }
+      .ticket h2::before {
+        content: '';
+        display: inline-block;
+        width: 2.88vw;
+        height: 2.24vw;
+        background: url(../img/common/icon11.png) no-repeat;
+        background-size: contain;
+        background-position: center bottom;
+        margin-right: 1.429%; } }
+
+@media screen and (min-width: 1251px) {
+  .ticket h2 {
+    font-size: 28px; }
+    .ticket h2::before {
+      width: 36px;
+      height: 28px; } }
+
+.ticketBoxlist {
+  padding: 10.66667vw 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  .ticketBoxlist li {
+    width: 42.66667vw;
+    height: 55.46667vw;
+    background: #fff;
+    border-radius: 1.5vw;
+    overflow: hidden; }
+  .ticketBoxlist li:nth-of-type(n+3) {
+    margin-top: 2.93333vw; }
+
+@media screen and (min-width: 751px) {
+  .ticketBoxlist {
+    padding: 5.715% 0 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .ticketBoxlist li {
+      width: 23.81%;
+      height: 21.92vw;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden; }
+    .ticketBoxlist li:nth-of-type(n+3) {
+      margin-top: 0; } }
+
+@media screen and (min-width: 1251px) {
+  .ticketBoxlist li {
+    height: 274px; } }
+
+.ticketBoxlist_txt {
+  font-size: 3.2vw;
+  text-align: center;
+  padding: 4.66667vw 1.33333vw 0;
+  color: #0099FF; }
+  .ticketBoxlist_txt a {
+    color: #0099FF; }
+
+@media screen and (min-width: 751px) {
+  .ticketBoxlist_txt {
+    font-size: 1.2vw;
+    text-align: center;
+    padding: 6% 2% 0;
+    color: #0099FF; } }
+
+@media screen and (min-width: 1251px) {
+  .ticketBoxlist_txt {
+    font-size: 15px; } }
+
+.ticketBoxlist-only {
+  margin-top: 10.66667vw;
+  background: #fff;
+  border-radius: 2.5vw; }
+  .ticketBoxlist-only + .ticketBoxlist-only {
+    margin-top: 6.66667vw; }
+  .ticketBoxlist-only .ticketBoxlist_txt {
+    padding: 4.66667vw 1.33333vw;
+    font-size: 4.26667vw; }
+  .ticketBoxlist-only .line_one_three {
+    padding: 12.13333vw 1.33333vw; }
+
+@media screen and (min-width: 751px) {
+  .ticketBoxlist-only {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 80.953%;
+    margin: 5.715% auto 0;
+    background: #fff;
+    border-radius: 10px; }
+    .ticketBoxlist-only + .ticketBoxlist-only {
+      margin-top: 2.858%; }
+    .ticketBoxlist-only .ticketBoxlist_img {
+      -ms-flex-negative: 0;
+      flex-shrink: 0;
+      width: 52.177%; }
+    .ticketBoxlist-only .ticketBoxlist_txt {
+      padding: 0;
+      font-size: 1.44vw;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .ticketBoxlist-only .ticketBoxlist_txt p {
+        font-weight: bold;
+        text-align: left; }
+    .ticketBoxlist-only .line_one_three {
+      padding: 0; } }
+
+@media screen and (min-width: 1251px) {
+  .ticketBoxlist-only .ticketBoxlist_txt {
+    padding: 0;
+    font-size: 18px; } }

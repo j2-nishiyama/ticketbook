@@ -1,0 +1,3247 @@
+@charset "UTF-8";
+@import "_mixin";
+
+em,strong,b {
+    font-weight: bold;
+}
+
+.kvPages {
+  background: transparent;
+}
+
+p + ul {
+  padding-top: 0;
+}
+
+.header {
+  border-bottom: 1px solid $c2;
+}
+
+.slick-prev {
+  &::before {
+    content: '';
+    background: url(../img/common/arrow06.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: sp(35);
+    display: block;
+    opacity: 1;
+  }
+}
+
+.slick-next {
+  &::before {
+    content: '';
+    background: url(../img/common/arrow07.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100%;
+    height: sp(35);
+    display: block;
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width:751px) {
+  .slick-prev {
+    &::before {
+      content: '';
+      background: url(../img/common/arrow06.png) no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 100%;
+      height: pc(24);
+      display: block;
+      opacity: 1;
+    }
+  }
+
+
+  .slick-next {
+    &::before {
+      content: '';
+      background: url(../img/common/arrow07.png) no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 100%;
+      height: pc(24);
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-width:750px) {
+
+  .slick-dots {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width:751px) {
+  .slick-dots {
+    position: absolute;
+    bottom: ceil-unit(20, 620);
+    list-style: none;
+    display: block;
+    text-align: right;
+    padding: 0 8% 0 0;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+
+@media screen and (min-width:751px) {
+  .slick-dots li {
+    position: relative;
+    display: inline-block;
+    height: pc(3);
+    width: pc(20);
+    margin: 0 2.5px;
+    padding: 0;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width:1251px) {
+  .slick-dots li {
+    height: 3px;
+    width: 20px;
+  }
+}
+
+.slick-dots li button {
+  border: 0;
+  background: transparent;
+  display: block;
+  height: 100%;
+  width: 100%;
+  outline: none;
+  line-height: 0px;
+  font-size: 0px;
+  color: transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.slick-dots li button:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  font-family: "slick";
+  font-size: 0px;
+  line-height: 20px;
+  text-align: center;
+  color: black;
+  opacity: 1;
+  -webkit-font-smoothing: antialiased;
+  background: #CCCCCC;
+}
+
+.slick-dots li.slick-active button:before {
+  background: #DC416E;
+  opacity: 1;
+}
+
+/*------------------------------
+kv
+--------------------------------*/
+.artist {
+  .kvPages {
+    padding-top: 0;
+  }
+
+  .kvArrows {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media screen and (min-width:1251px) {
+  .artist {
+    .kvArrows {
+      transform: translate(-50%);
+    }
+  }
+}
+
+/*------------------------------
+main内section
+--------------------------------*/
+#artist {
+  .contents {
+    padding: 0;
+    background-color: #0099FF;
+  }
+  .main {
+    padding: 10px;
+    letter-spacing: .1em;
+    section + section {
+      margin-top: 10px;
+    }
+  }
+  .inner {
+    width: 100%;
+  }
+  .panList {
+    font-size: sp(18);
+    padding: 0 12px;
+    display: flex;
+    li:not(:first-child) {
+      position: relative;
+      padding-left: 1.2em;
+      margin-left: .5em;
+      color: #fff;
+      &::before {
+        content: '>';
+        display: block;
+        position: absolute;
+        left: 0;
+      }
+    }
+
+    a {
+        color: #fff;
+    }
+  }
+  .ttl {
+    color: #fff;
+    position: relative;
+    margin-top: sp(70);
+    margin-bottom: sp(50);
+    padding: 0 sp(25);
+
+    h1 {
+      font-weight: 500;
+      font-size: sp(36);
+      line-height: ceil-unit(46,36,"em");
+    }
+
+    p {
+      font-size: sp(36);
+    }
+  }
+  .artist_anchor {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: sp(20);
+    > li {
+      display: flex;
+      width: sp(230);
+      a {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: sp(15);
+        border: solid 1px #fff;
+        border-radius: sp(46);
+        font-size: sp(22);
+        line-height: ceil-unit(28,22,"em");
+        text-align: center;
+        transition: .5s;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 50%;
+          right: sp(20);
+          width: sp(14);
+          height: sp(10);
+          background: url(../img/common/arrow_artist.png) no-repeat 0 0;
+          background-size: contain;
+          transform: translateY(-50%);
+        }
+        &:hover {
+            color: $c2;
+            border-color: $c2;
+            background-color: #fff;
+            opacity: 1;
+            &::before {
+                background: url(../img/common/arrow_artist_blue.png) no-repeat 0 0;
+                background-size: contain;
+            }
+        }
+      }
+    }
+  }
+  .artist_sec_horizon {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .artist_sec {
+    padding: 25px;
+    background-color: #fff;
+  }
+  .artist_sec_inr {
+    + .artist_sec_inr {
+      margin-top: sp(100);
+    }
+  }
+  .secTtl {
+    margin-bottom: sp(40);
+    padding-bottom: sp(15);
+    font-size: sp(28);
+    font-weight: bold;
+    line-height: ceil-unit(48,30,"em");
+    border-bottom: solid 1px #1a1a1a;
+  }
+  .p_cmn {
+    font-size: sp(25);
+    line-height: ceil-unit(39,25,"em");
+  }
+  .performance_list {
+    > li {
+      margin-bottom: sp(40);
+      padding-bottom: sp(40);
+      border-bottom: solid 1px #e1e1e1;
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+  }
+  .peromance_label_wrap {
+    width: 100%;
+  }
+  .peromance_label {
+    display: inline-block;
+    margin-bottom: sp(6);
+    padding: sp(6) sp(7);
+    font-size: sp(20);
+    font-weight: normal;
+    line-height: 1;
+    &.red {
+      color: #fff;
+      background-color: #f02300;
+    }
+  }
+  .performance_cont {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    font-size: sp(26);
+    font-weight: bold;
+    line-height: ceil-unit(40,26,"em");
+  }
+  .performance_cont_inr {
+    display: flex;
+  }
+  .performance_cont_date {
+    flex-shrink: 0;
+    min-width: sp(140);
+    margin-right: sp(24);
+    text-align: center;
+    span {
+      display: block;
+    }
+  }
+  .performance_status {
+    display: flex;
+    align-items: center;
+    margin-top: sp(20);
+    margin-right: sp(-25);
+    margin-left: sp(-25);
+    padding: sp(16) sp(20);
+    background-color: #e8f4f8;
+    + .performance_status {
+      margin-top: sp(10);
+    }
+  }
+  .performance_cont_label {
+    display: inline-block;
+    width: sp(410);
+    margin-top: sp(10);
+    color: #f02300;
+    font-size: sp(22);
+    font-weight: normal;
+    text-align: center;
+    border: solid 1px #f02300;
+  }
+  .performance_status_label {
+    flex-shrink: 0;
+    margin-right: sp(10);
+    padding: sp(5) sp(10);
+    text-align: center;
+    font-size: sp(20);
+    line-height: 1;
+    &.is_accept {
+      background-color: #fdd80a;
+    }
+  }
+  .performance_status_txt {
+    font-size: sp(25);
+  }
+  .performance_status_btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding: sp(20) sp(22);
+    font-size: sp(23);
+    font-weight: bold;
+    line-height: 1;
+    background-color: $c2;
+    border: solid 1px $c2;
+    border-radius: sp(30);
+    transition: .5s;
+    &::after {
+      content: "";
+      display: block;
+      width: sp(16);
+      height: sp(6);
+      margin-left: sp(9);
+      background: url(../img/common/arrow01.png) no-repeat 0 0;
+      background-size: contain;
+    }
+    &:hover {
+        color: $c2;
+        background-color: #fff;
+        &::after {
+            background: url(../img/common/arrow05.png) no-repeat 0 0;
+            background-size: contain;
+        }
+    }
+  }
+  // 販売スケジュール
+  .schedule_list {
+    > li {
+      margin-bottom: sp(40);
+      padding-bottom: sp(40);
+      border-bottom: solid 1px #e1e1e1;
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+  }
+  .schedule_class {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: sp(20);
+    font-size: sp(26);
+    font-weight: bold;
+    line-height: ceil-unit(40,26,"em");
+    overflow-wrap: anywhere;
+    .performance_status_btn {
+      flex-shrink: 0;
+      margin-left: sp(10);
+    }
+  }
+  .schedule_cont {
+      overflow-wrap: anywhere;
+    + .schedule_cont {
+      margin-top: sp(30);
+    }
+  }
+  .schedule_place {
+    display: inline-block;
+    margin-bottom: sp(10);
+    padding: sp(5) sp(6);
+    font-size: sp(20);
+    line-height: 1;
+    border: solid 1px #1a1a1a;
+  }
+  .schedule_info {
+    display: flex;
+    font-size: sp(22);
+  }
+  .schedule_info_ttl {
+    margin-right: sp(20);
+  }
+  .schedule_info_time {
+    width: 65.33333vw;
+  }
+  // お知らせ
+  .news_all {
+    padding: 0;
+    > li {
+      margin-bottom: sp(40);
+      padding-top: 0;
+      padding-bottom: sp(40);
+      border-bottom: solid 1px #e1e1e1;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      a {
+        color: #1a1a1a;
+      }
+    }
+  }
+  .news_toggle_btn {
+    position: relative;
+    &::before, &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      background-color: #1a1a1a;
+    }
+    &::before {
+      top: sp(13);
+      right: 0;
+      width: sp(30);
+      height: 1px;
+    }
+    &::after {
+      top: 0;
+      right: sp(15);
+      width: 1px;
+      height: sp(30);
+      transition: transform .5s;
+    }
+    &.is-open {
+      &::after {
+        transform: rotate(90deg);
+        transform-origin: center center;
+      }
+    }
+  }
+  .news_info {
+    margin-bottom: sp(10);
+  }
+  .news_date {
+    color: $c2;
+    font-size: sp(25);
+    line-height: 1;
+  }
+  .news_label {
+    color: #fff;
+    margin-left: sp(20);
+    padding: sp(4) sp(10);
+    font-size: sp(20);
+    background-color: #f02300;
+    border: none;
+  }
+  .news_txt {
+    line-height: ceil-unit(39,25,"em");
+  }
+  .news_toggle_cont {
+    display: none;
+    margin-top: sp(10);
+    line-height: ceil-unit(39,25,"em");
+  }
+  .news_link {
+      position: relative;
+      margin-bottom: 0;
+      // padding-right: sp(70);
+      text-decoration: none;
+      &::before,
+      &::after {
+          // content: "";
+          display: block;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          width: sp(30);
+          height: sp(30);
+          border-top: solid 1px $c2;
+      }
+      &::after {
+          transform: rotate(90deg);
+          top: 50%;
+          right: sp(14);
+          margin-top: sp(-15);
+      }
+      &.is-open {
+          &::after {
+              content: none;
+          }
+      }
+  }
+  // 公演情報
+  .performance_info_list {
+    > li {
+      margin-bottom: sp(20);
+      padding-bottom: sp(20);
+    //   border-bottom: solid 1px #e1e1e1;
+      &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+      font-weight: bold;
+      line-height: ceil-unit(39,25,"em");
+      a {
+        display: block;
+        color: #1a1a1a;
+      }
+    }
+    // 出演者情報　テキストのみ
+    &--perfomer {
+        @extend .performance_info_list;
+        > li {
+            border-bottom: solid 1px #e1e1e1;
+        }
+    }
+    // 出演者情報　写真付き
+    &--photo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        > li {
+        width: sp(286);
+        margin-bottom: sp(24);
+        &:last-child {
+            margin-bottom: 0;
+        }
+        }
+        .performance_info_date {
+        margin-top: sp(10);
+        color: $c2;
+        font-size: sp(24);
+        line-height: ceil-unit(38,24,"em");
+        }
+        .performance_info_name {
+        font-size: sp(24);
+        line-height: ceil-unit(38,24,"em");
+        }
+    }
+  }
+  // チケット情報
+  .ticketList01 {
+    > ul {
+      li {
+        margin-bottom: sp(45);
+        padding-bottom: sp(45);
+        border-bottom: solid 1px #e1e1e1;
+        &:last-child {
+          margin-bottom: 0;
+          padding-bottom: 0;
+          border-bottom: none;
+        }
+      }
+    }
+    
+    dl {
+      display: block;
+      justify-content: space-between;
+    }
+    dt {
+      font-size: sp(28);
+      margin-bottom: sp(30);
+      color: $c2;
+    }
+    dd {
+      margin-bottom: sp(20);
+      font-size: sp(25);
+      line-height: ceil-unit(39,25,"em");
+      &:last-child {
+        margin-bottom: 0;
+      }
+      small {
+        display: block;
+        padding-left: 1em;
+        text-indent: -1em;
+        font-size: sp(22);
+        line-height: ceil-unit(36,22,"em");
+      }
+
+      &.small {
+        font-size: sp(24);
+      }
+
+    }
+  }
+  .kome_list {
+    padding-left: 1em;
+    font-size: sp(24);
+    > li {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+      padding-left: 1.5em;
+      text-indent: -1em;
+      border-bottom: none !important;
+    }
+  }
+  // 主催者からの興行に関する注意事項
+  #attention {
+    .secTtl {
+      margin-bottom: 0;
+      padding-right: sp(40);
+      padding-bottom: 0;
+      border-bottom: none;
+      position: relative;
+      line-height: 1;
+      width: 85.33333vw;
+      &::before, &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: #1a1a1a;
+      }
+      &::before {
+        top: sp(13);
+        right: 0;
+        width: sp(28);
+        height: 1px;
+      }
+      &::after {
+        top: 0;
+        right: sp(13);
+        width: 1px;
+        height: sp(28);
+        transition: transform .5s;
+      }
+      &.is-open {
+        &::after {
+          transform: rotate(90deg);
+          transform-origin: center center;
+        }
+      }
+    }
+  }
+  .attention_cont {
+    display: none;
+    margin-top: sp(30);
+  }
+  .attention_list {
+    > li {
+      font-size: sp(24);
+      line-height: ceil-unit(38,24,"em");
+    }
+    dd {
+      small {
+        display: block;
+        padding-left: 2.5em;
+        text-indent: -1em;
+        line-height: 1.637em;
+      }
+    }
+    a {
+      color: #000;
+      text-decoration: underline;
+    }
+    .sub_attention {
+      margin-left: 4vw;
+    }
+    .att_sub_ttl {
+      font-weight: bold;
+    }
+    .ticketList01 {
+      .remark {
+        margin-left: 4vw;
+      }
+    }
+    li h2 {
+      font-weight: bold;
+    }
+    .pp_box {
+      margin-left: 4vw;
+    }
+  }
+}
+.attention_txt-red {
+  color: #f02300;
+}
+
+
+//テキスト周り
+.artist {
+  .txtWrap {
+    font-size: sp(28);
+    background: #fff;
+    border-radius: sp(20);
+    padding: 0 sp(65);
+
+    &.blue {
+      border: sp(2) solid $c2;
+      color: #3FA9F5;
+      font-size: sp(30);
+    }
+  }
+
+  .txtWrap.blue + .txtWrap {
+    margin-top: sp(40);
+  }
+
+  .txtWrap + .txtWrap {
+    margin-top: sp(20);
+  }
+
+  .txtBox {
+    padding: sp(50) 0;
+  }
+
+  .txtBox + .txtBox {
+    border-top: sp(2) solid $c4;
+  }
+}
+
+@media screen and (min-width:751px) {
+  .artist {
+    .txtWrap {
+      font-size: pc(15);
+      background: #fff;
+      border-radius: 10px;
+      padding: 0 ceil-unit(60, $lgInner);
+
+      &.blue {
+        border: 2px solid $c2;
+        color: #3FA9F5;
+        font-size: pc(18);
+
+        .txtBox {
+          padding: ceil-unit(20, $lgInner) 0;
+        }
+      }
+    }
+
+    .txtWrap.blue + .txtWrap {
+      margin-top: ceil-unit(16, $lgInner);
+    }
+
+    .txtWrap + .txtWrap {
+      margin-top: ceil-unit(20, $lgInner);
+    }
+
+    .txtBox {
+      padding: ceil-unit(36.75, $lgInner) 0;
+      li {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+    }
+
+    .txtBox + .txtBox {
+      border-top: 1px solid $c4;
+    }
+    .ticketBlock_min {
+      .txtBox {
+        li {
+          align-items: flex-end;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1251px) {
+  .artist {
+    .txtWrap {
+      font-size: 15px;
+      padding: 0 60px;
+      &.blue {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+
+// stage
+.artist {
+  .stage_date {
+    color: $c2;
+  }
+
+  .stage_time {
+    padding-top: sp(25);
+  }
+}
+
+@media screen and (min-width:751px) {
+  .artist {
+    .stage {
+      .txtWrap {
+        padding: ceil-unit(40, 990) ceil-unit(60, 990);
+
+        &.blue {
+          padding: 0 ceil-unit(60, 990);
+        }
+      }
+
+      .txtBox {
+        display: flex;
+        align-items: center;
+        padding: ceil-unit(20, 990) 0;
+      }
+    }
+
+    .stageDate {
+      .txtBox {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .stage_date {
+      width: ceil-unit(178.2, 990);
+      margin-right: 3%;
+    }
+
+    .stage_name {
+      width: ceil-unit(485, 990);
+    }
+
+    .stage_time {
+      padding-top: 0;
+      margin-left: auto;
+    }
+  }
+}
+
+.artist {
+  .stage {
+    .txtWrap.blue {
+      p {
+        font-weight: bold;
+        text-align: center;
+      }
+
+      p + p {
+        padding-top: sp(70)
+      }
+    }
+  }
+}
+
+@media screen and (min-width:751px) {
+  .artist {
+    .stage {
+
+      .txtWrap.blue {
+
+        .txtBox {
+          display: block;
+        }
+
+        p {
+          font-weight: bold;
+          text-align: center;
+        }
+
+        p + p {
+          padding-top: ceil-unit(35, 990);
+        }
+      }
+    }
+  }
+}
+
+
+
+//cast
+.cast {
+  .castListBox{
+    padding: 12.5% 0 0;
+  }
+  .castList{
+    display: flex;
+    flex-wrap: wrap;
+    li{
+      display: block;
+    }
+    .castList-item{
+      margin-bottom: 9.616%;
+      margin-right: 3.8%;
+      width: 48%;
+      &:nth-child(2n){
+        margin-right: 0;
+      }
+    }
+    .castList-day{
+      color: #0099FF;
+      line-height: 1.6;
+      padding-top: 1.076%;
+    }
+  }
+}
+
+.red {
+  color: #ED1E79;
+}
+
+@media screen and (min-width:751px) {
+  .cast {
+    .castListBox {
+      padding: 60px 0 10px;
+      .castList-item{
+        margin-bottom: 40px;
+        margin-right: 2%;
+        width: 23.5%;
+      &:nth-child(2n){
+        margin-right: 2%;
+      }
+      &:nth-child(4n){
+        margin-right: 0;
+      }
+    }
+      p{
+        line-height: 1.6;
+      }
+      p + p {
+        padding-top: 0;
+      }
+    }
+    .castList-day{
+      margin-top: 9px;
+    }
+  }
+}
+
+
+// @media screen and (min-width:751px) {
+//   .artist {
+//     .ticketList01 {
+//       padding: ceil-unit(20, $lgInner) ceil-unit(30, $lgInner) ceil-unit(40, $lgInner);
+
+//       li + li {
+//         margin-top: ceil-unit(20, $lgInner);
+//       }
+
+//       dl {
+//         display: flex;
+//         justify-content: flex-start;
+//       }
+
+//       dt {
+//         font-size: pc(17);
+//         width: ceil-unit(105, 1020);
+//         padding: 0;
+//         border: 1px solid $c2;
+//         color: $c2;
+//         margin-right: ceil-unit(15, 1020);
+//         margin-bottom: 0;
+//         span {
+//             display: flex;
+//             align-items: center;
+//             justify-content: center;
+//             height: 100%;
+//         }
+//       }
+
+//       dd {
+//         font-size: pc(18);
+//         width: auto;
+//         margin-bottom: 0;
+//         line-height: 1.5;
+//         flex-shrink: 100;
+//         small {
+//             font-size: pc(14);
+//         }
+
+//         &.small {
+//           font-size: pc(14);
+//         }
+//         &.age {
+//             display: flex;
+//             align-items: center;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (min-width:1251px) {
+//   .artist {
+//     .ticketList01 {
+//       dt {
+//         font-size: 17px;
+//       }
+
+//       dd {
+//         font-size: 18px;
+//         small {
+//             font-size: 14px;
+//         }
+//         &.small {
+//           font-size: 14px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+
+
+
+// .artist {
+//   .ticketList02 {
+//     > ul {
+//       > li {
+//         + li {
+//           margin-top: sp(60);
+//         }
+//       }
+//     }
+//     .txtWrap.new {
+//       .ticket_name {
+//         position: relative;
+//           &::before {
+//           content: '';
+//           display: block;
+//           width: sp(120);
+//           height: sp(59);
+//           background: url(../img/common/new01.png) no-repeat;
+//           background-position: center;
+//           background-size: contain;
+//           top: sp(-60);
+//           left: sp(-44);
+//           position: absolute
+//         }
+//       }
+//     }
+//   }
+
+//   .ticket_name {
+//     font-size: sp(34);
+//     font-weight: bold;
+//     color: $c2;
+//   }
+
+//   .ticket_order {
+//     padding-top: sp(30);
+//     dd {
+//       p:first-of-type {
+
+//         &::after {
+//           content: '';
+//           display: inline-block;
+//           padding: 0 sp(13);
+//         }
+//       }
+//     }
+//   }
+
+//   .ticket_announce {
+//     padding: sp(40) 0 sp(50);
+//   }
+//   .ticket_annotation {
+//       font-size: sp(26);
+//   }
+
+//   .ticketList02_btn {
+//     width: sp(520);
+//     margin: 0 auto;
+//     padding: sp(62) 0 0;
+//   }
+//   .ticket_apply {
+//     text-align: center;
+//     &_txt {
+//       margin-bottom: sp(40);
+//       text-align: left;
+//       font-size: sp(26);
+//     }
+//     .ticket_input_wrap {
+//       display: flex;
+//       justify-content: center;
+//       margin-top: sp(40);
+//       margin-bottom: sp(40);
+//     }
+//     input {
+//       display: none;
+//     }
+//     label {
+//       position: relative;
+//       display: flex;
+//       align-items: center;
+//       white-space: nowrap;
+//       cursor: pointer;
+
+//       span {
+//         padding-left: 9%;
+//         line-height: 1;
+//         color: $c2;
+//         font-size: sp(36);
+//       }
+//     }
+
+//     label:before {
+//       width: sp(36);
+//       height: sp(36);
+//       content: '';
+//       border: 0.1em solid $c2;
+//       display: inline-block;
+
+//     }
+
+//     input:checked + label:after {
+//       content: "";
+//       display: block;
+//       position: absolute;
+//       top: sp(7);
+//       left: sp(12);
+//       width: sp(12);
+//       height: sp(20);
+//       transform: rotate(40deg);
+//       border-bottom: 3px solid $c2;
+//       border-right: 3px solid $c2;
+//     }
+//   }
+// }
+
+@media screen and (min-width:751px) {
+  .artist {
+    .ticketList02 {
+      .txtWrap.new {
+        .ticket_name {
+          &::before {
+            width: ceil-unit(54, $lgInner, "vw");
+            height: ceil-unit(32, $lgInner, "vw");
+            top: ceil-unit(-24, $lgInner, "vw");
+            left: ceil-unit(-30, $lgInner, "vw");
+            background-size: 100% auto;
+          }
+        }
+      }
+
+      > ul {
+        > li {
+          + li {
+            margin-top: pc(40);
+          }
+        }
+      }
+    }
+
+    .ticket_name {
+      margin-bottom: ceil-unit(30, $lgInner);
+      font-size: pc(21);
+      font-weight: bold;
+      color: $c2;
+    }
+
+
+    .ticket_order {
+      padding-top: 0;
+      display: flex;
+
+      dd {
+        display: flex;
+
+        p {
+          flex-shrink: 0;
+          white-space: nowrap;
+        }
+
+        p:first-of-type {
+          display: flex;
+
+          &::after {
+            display: none;
+            //            content: '〜';
+            //            display: block;
+            //            padding: 0 4%;
+          }
+        }
+
+        .from {
+          padding: 0 2%;
+        }
+      }
+    }
+
+    .ticket_announce {
+      display: flex;
+      padding: 0;
+    }
+    .ticket_annotation {
+      font-size: pc(12);
+    }
+
+    .ticketBlock {
+      .txtWrap {
+        width: 100%;
+      }
+    }
+
+    .ticketList02_btn {
+      width: ceil-unit(300, $lgInner);
+      margin: 0 auto;
+      padding: ceil-unit(41, $lgInner) 0 0;
+    }
+    .ticket_apply {
+      width: ceil-unit(240, $lgInner, "vw");
+      margin-left: ceil-unit(10, $lgInner, "vw");
+      &_txt {
+        margin-bottom: ceil-unit(20, $lgInner, "vw");
+        font-size: ceil-unit(12, $lgInner, "vw");
+      }
+      .ticket_input_wrap {
+        margin-top: 0;
+        margin-bottom: ceil-unit(20, $lgInner, "vw");
+      }
+      label {
+        span {
+          padding-left: ceil-unit(7, $lgInner, "vw");
+          font-size: ceil-unit(15, $lgInner, "vw");
+        }
+      }
+
+      label:before {
+        width: ceil-unit(16, $lgInner, "vw");
+        height: ceil-unit(16, $lgInner, "vw");
+        border: 1px solid $c2;
+
+      }
+
+      input:checked + label:after {
+        top: pc(1);
+        left: pc(4);
+        width: pc(9);
+        height: pc(14);
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1251px) {
+  .artist {
+    .ticketList02 {
+      .txtWrap.new {
+        .ticket_name {
+          &::before {
+            width: 58px;
+            height: 32px;
+            top: -26px;
+            left: -34px;
+          }
+        }
+      }
+      > ul {
+        > li {
+          + li {
+            margin-top: 40px;
+          }
+        }
+      }
+      .ticket_name {
+        margin-bottom: 30px;
+        font-size: 21px;
+      }
+    }
+    .ticket_order {
+      letter-spacing: .1em;
+    }
+    .ticket_announce {
+      letter-spacing: .1em;
+    }
+    .ticket_annotation {
+      margin-top: 10px;
+      font-size: 12px;
+    }
+    .ticket_apply {
+      width: 218px;
+      margin-left: 0;
+      &_txt {
+        margin-bottom: 20px;
+        font-size: 12px;
+        text-align: justify;
+      }
+      .ticket_input_wrap {
+        margin-bottom: 20px;
+      }
+      label {
+        span {
+          padding-left: 7px;
+          font-size: 15px;
+        }
+      }
+      label:before {
+        width: 16px;
+        height: 16px;
+      }
+
+      input:checked + label:after {
+        top: 1px;
+        left: 4px;
+        width: 8px;
+        height: 12px;
+      }
+    }
+  }
+}
+
+
+
+.artist {
+  .btn01 {
+    width: 100%;
+    text-align: center;
+    background: $c2;
+    position: relative;
+    padding: sp(35) 0;
+    line-height: 1;
+    border-radius: sp(50);
+    display: block;
+    font-size: sp(30);
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.5em;
+    &.is_invalid {
+      background-color: #9e9e9e;
+      pointer-events: none;
+    }
+    &.c_glay {
+        background-color: #9e9e9e;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: sp(20);
+      height: sp(20);
+      background: url(../img/common/arrow01.png) no-repeat;
+      background-size: contain;
+      background-position: center;
+      right: sp(52);
+      top: 50%;
+      transform: translateY(-50%)
+    }
+  }
+  input {
+    &.btn01 {
+      background-image: url(../img/common/arrow01.png);
+      background-repeat: no-repeat;
+      background-position: top 50% right sp(50);
+      background-size: sp(20);
+    }
+  }
+}
+
+@media screen and (min-width:751px) {
+  .artist {
+    .btn01 {
+      text-align: center;
+      background: $c2;
+      position: relative;
+      padding: ceil-unit(80, $lgInner) 0;
+      line-height: 1;
+      border-radius: 50px;
+      display: block;
+      font-size: pc(14);
+      color: #fff;
+      font-weight: bold;
+      letter-spacing: 0.5em;
+      cursor: pointer;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: ceil-unit(25, 160);
+        height: ceil-unit(20, 160);
+        background: url(../img/common/arrow01.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+        right: ceil-unit(18, 160);
+        top: 50%;
+        transform: translateY(-50%)
+      }
+    }
+    input {
+      &.btn01 {
+        background-position: top 50% right ceil-unit(15, 160);
+        background-size: ceil-unit(10, 160);
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1251px) {
+  .artist {
+    .btn01 {
+      width: 160px;
+      margin: 0 auto;
+      padding: 16px;
+      font-size: 14px;
+    }
+    input {
+      &.btn01 {
+        background-position: top 50% right 25px;
+        background-size: 14px;
+      }
+    }
+  }
+}
+
+.artist {
+  .btn02 {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    padding: sp(35) 0;
+    line-height: 1;
+    border-radius: sp(50);
+    display: block;
+    font-size: sp(30);
+    color: $c2;
+    font-weight: bold;
+    border: sp(2) solid $c2;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: sp(20);
+      height: sp(20);
+      background: url(../img/common/arrow05.png) no-repeat;
+      background-size: contain;
+      background-position: center;
+      right: sp(52);
+      top: 50%;
+      transform: translateY(-50%)
+    }
+  }
+}
+
+@media screen and (min-width:751px) {
+  .artist {
+    .btn02 {
+      width: 100%;
+      text-align: center;
+      position: relative;
+      padding: ceil-unit(23, 300) 0;
+      line-height: 1;
+      border-radius: 50px;
+      display: block;
+      font-size: pc(14);
+      color: $c2;
+      font-weight: bold;
+      border: 1px solid $c2;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: ceil-unit(25, 200);
+        height: ceil-unit(20, 200);
+        background: url(../img/common/arrow05.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+        right: ceil-unit(18, 300);
+        top: 50%;
+        transform: translateY(-50%)
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1251px) {
+  .artist {
+    .btn02 {
+      font-size: 14px;
+    }
+  }
+}
+
+.artist {
+  .attention {
+    .txtBox {
+      p + p {
+        padding-top: sp(40);
+      }
+      ul {
+          > li {
+              padding-left: 1em;
+              text-indent: -1em;
+          }
+      }
+    }
+  }
+}
+
+@media screen and (min-width:751px) {
+  .artist {
+    .attention {
+      .txtBox {
+        p + p {
+          padding-top: ceil-unit(35, $lgInner)
+        }
+      }
+    }
+  }
+}
+
+.detailWrap {
+  font-size: sp(24);
+
+  .detailWrap_li {
+    margin-top: sp(34);
+    padding: sp(34) 0;
+    border-top: sp(2) dashed $c2;
+  }
+
+  h4 {
+    font-size: sp(28);
+    // margin-left: -1%;
+    color: $c2;
+    padding-bottom: sp(30);
+  }
+
+  h5 {
+    font-size: sp(28);
+    color: $c2;
+
+  }
+}
+
+.detailSubttl {
+  display: flex;
+  align-items: center;
+  margin-top: sp(50);
+  cursor: pointer;
+}
+
+.detailMain_btn {
+  width: sp(32);
+  height: sp(32);
+  border: sp(2) solid $c2;
+  margin-left: 2%;
+  position: relative;
+
+  span {
+    width: 60%;
+    height: sp(2);
+    background: $c2;
+    display: block;
+    position: absolute;
+    transition: .7s;
+
+    &:nth-of-type(1) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:nth-of-type(2) {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-90deg);
+    }
+  }
+}
+
+.detailMain_btn.open {
+  span {
+    &:nth-of-type(2) {
+      transform: translate(-50%, -50%) rotate(0)
+    }
+  }
+}
+
+.detailBody {
+  padding-top: ceil-unit(30, 990);
+  display: none;
+}
+
+.ticketDetail_li_txt {
+  color: $c2;
+}
+
+.detailBlock + .detailBlock {
+  padding-top: sp(50);
+}
+
+.detailBlock_ttl {
+  color: $c2;
+  font-weight: bold;
+}
+
+.detailBox01 {
+  padding-top: sp(50);
+}
+
+.detailBox01_ttl {
+  font-weight: bold;
+}
+
+@media screen and (min-width:751px) {
+  .detailWrap {
+    // padding: 0 ceil-unit(30, $lgInner) 0;
+    font-size: pc(14);
+    > li {
+      margin-top: sp(15) !important;
+      &:last-child {
+        border-bottom: none !important;
+      }
+    }
+
+    .detailWrap_li {
+      padding: 0;
+      border-top: none;
+      border-bottom: none;
+    }
+
+    h4 {
+      font-size: pc(18);
+      padding-bottom: pc(12);
+    }
+
+    h5 {
+      font-size: pc(20);
+
+    }
+  }
+
+  .detailSubttl {
+    display: flex;
+    align-items: center;
+    margin-top: ceil-unit(40, 990);
+  }
+
+  .detailMain_btn {
+    width: pc(20);
+    height: pc(20);
+    border: 1px solid $c2;
+    margin-left: ceil-unit(15, 990);
+    position: relative;
+
+    span {
+      width: 60%;
+      height: 1px;
+      background: $c2;
+      display: block;
+      position: absolute;
+      transition: .7s;
+
+      &:nth-of-type(1) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &:nth-of-type(2) {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
+      }
+    }
+  }
+
+  .detailMain_btn.open {
+    span {
+      &:nth-of-type(2) {
+        transform: translate(-50%, -50%) rotate(0)
+      }
+    }
+  }
+
+  .detailBody {
+    padding-top: ceil-unit(30, 990);
+  }
+
+  .ticketDetail_li_txt {
+    color: $c2;
+  }
+
+  .detailBlock + .detailBlock {
+    padding-top: ceil-unit(30, 990);
+  }
+
+  .detailBlock_ttl {
+    color: $c2;
+    font-weight: bold;
+  }
+
+  .detailBox01 {
+    padding-top: ceil-unit(30, 990);
+  }
+
+  .detailBox01_ttl {
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width:1251px) {
+  .detailWrap {
+    p {
+      font-size: 14px;
+      &.kome {
+        font-size: 12px;
+      }
+    }
+
+    h4,
+    h5 {
+      font-size: 18px;
+    }
+  }
+
+  .detailMain_btn {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+
+.modalOverlay {
+  position: fixed;
+  background: #000;
+  opacity: .8;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow-y: scroll;
+  display: none;
+
+}
+
+.modalWrap {
+  width: sp(700);
+  position: absolute;
+
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+}
+
+.modalWrap_close {
+  width: sp(50);
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: sp(-70);
+}
+
+.modalWrap_inner {
+  padding-bottom: 30%;
+  //  position: absolute;
+  //  width: 100%;
+  //  height: 100%;
+}
+
+.modalArea {
+  //  position: absolute;
+  background: #fff;
+  width: 100%;
+  padding: sp(60) sp(40);
+
+  h3 {
+    font-size: sp(44);
+    font-weight: bold;
+    position: relative;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: $c2;
+    width: 90%;
+    margin: 0 auto sp(60);
+
+    span {
+      background: #fff;
+      position: relative;
+      padding: 0 5%;
+    }
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 100%;
+      height: sp(1);
+      border: sp(1) dashed $c2;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .kome {
+    margin-top: sp(20);
+    font-size: sp(22);
+  }
+}
+.modal_ttl_wrap {
+    text-align: center;
+    margin-top: 1vw;
+    margin-bottom: sp(30);
+}
+.modal_ttl_label {
+    display: inline-block;
+    margin-top: 1.6vw;
+    margin-bottom: sp(12);
+    padding: sp(10) sp(18);
+    color: #fff;
+    font-size: 4.93333vw;
+    line-height: 1;
+    background-color: $c6;
+}
+.modal_ttl {
+    color: $c2;
+    font-size: sp(32);
+    font-weight: 700;
+    line-height: ceil-unit(46, 32, "em");
+    text-align: center;
+}
+.modal_box1_ttl  {
+  margin-bottom: 2.66667vw;
+  color: #0099ff;
+  font-size: 3.73333vw;
+  font-weight: 700;
+  line-height: 1.572em;
+  text-align: center;
+}
+.modal_txt {
+  font-size: sp(25);
+  line-height: ceil-unit(39, 25, "em");
+}
+.modal_txt-red {
+  color: $c6;
+}
+.modal_txt + .modal_box {
+  margin-top: sp(30);
+}
+.modal_box {
+  padding: sp(30);
+  + .modal_box {
+    margin-top: sp(20);
+  }
+}
+.modal_box-blue {
+  background-color: #e8f4f8;
+}
+.modal_box_ttl {
+  margin-bottom: sp(20);
+  font-size: sp(28);
+  font-weight: 700;
+  line-height: ceil-unit(44, 28, "em");
+  text-align: center;
+}
+.modal_box_txt {
+  font-size: sp(25);
+  line-height: ceil-unit(39, 25, "em");
+}
+.modal_box1_txt {
+  font-size: 3.33333vw;
+  line-height: 1.56em;
+}
+.modalMain {
+  font-size: sp(26);
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+}
+
+.modalMain_txt01 {
+  padding-top: sp(65)
+}
+.modalFooter {
+  padding-top: sp(30);
+  text-align: center;
+  
+
+  input[type=checkbox] {
+    display: none;
+  }
+
+  label {
+    position: relative;
+    white-space: nowrap;
+    cursor: pointer;
+
+    span {
+      position: relative;
+      padding-left: sp(10);
+      font-size: sp(28);
+      line-height: 1;
+    }
+  }
+
+  label:before {
+    position: relative;
+    top: sp(4);
+    width: sp(30);
+    height: sp(30);
+    content: '';
+    border: 0.1em solid $c2;
+    display: inline-block;
+    border-color: $c5;
+  }
+
+  input:checked + label:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: sp(-6);
+    left: sp(8);
+    width: sp(12);
+    height: sp(20);
+    transform: rotate(40deg);
+    border-bottom: 3px solid $c2;
+    border-right: 3px solid $c2;
+  }
+  .check_lead {
+    margin-bottom: sp(15);
+    font-size: sp(25);
+  }
+  .checkbox_wrap {
+    margin-bottom: sp(40);
+  }
+  .btn01 {
+    width: sp(500);
+    margin: 0 auto;
+    font-size: sp(26);
+    font-weight: 300;
+    letter-spacing: .1em;
+  }
+}
+@media screen and (min-width:751px) {
+  .modalWrap {
+    max-width: 100%;
+    width: ceil-unit(900, $lgMaxW);
+  }
+
+  .modalWrap_close {
+    width: pc(30);
+    right: 0;
+    top: pc(-40);
+  }
+
+  .modalWrap_inner {
+    padding-bottom: pc(50);
+  }
+
+  .modalArea {
+    padding: pc(50) pc(60);
+    overflow-y: visible;
+    height: 100%;
+
+    h3 {
+      font-size: pc(22);
+      font-weight: bold;
+      position: relative;
+      text-align: center;
+      letter-spacing: 0.05em;
+      color: $c2;
+      width: 100%;
+      margin: 0 auto ceil-unit(50, 780);
+
+      span {
+        background: #fff;
+        position: relative;
+        padding: 0 2%;
+      }
+
+      &::before {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 100%;
+        height: pc(1);
+        border: pc(1) dashed $c2;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .kome {
+      margin-top: pc(10);
+      font-size: pc(12);
+    }
+  }
+  .modal_ttl_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: pc(35);
+  }
+  .modal_ttl_label {
+      margin-bottom: 0;
+      margin-right: pc(10);
+      padding: 1.5vw 1.8vw;
+      font-size: 1.96vw;
+  }
+  .modal_ttl {
+      font-size: pc(20);
+      line-height: 1;
+  }
+  .modal_txt {
+    font-size: pc(14);
+    line-height: ceil-unit(24, 14, "em");
+  }
+  .modal_txt + .modal_box {
+    margin-top: pc(20);
+  }
+  .modal_box {
+    padding: pc(24);
+    + .modal_box {
+      margin-top: pc(9);
+    }
+  }
+  .modal_box_ttl {
+    margin-bottom: pc(14);
+    font-size: pc(16);
+    line-height: ceil-unit(29, 16, "em");
+  }
+  .modal_box1_ttl {
+    margin-bottom: 1.12vw;
+    font-size: 1.28vw;
+    line-height: 1.813em;
+  }
+  .modal_box_txt {
+    font-size: pc(14);
+    line-height: ceil-unit(24, 14, "em");
+  }
+  .modal_box1_txt {
+    font-size: 1.12vw;
+    line-height: 1.715em;
+  }
+  .modalMain {
+    font-size: pc(14);
+
+    a {
+      color: #000;
+      text-decoration: underline;
+    }
+  }
+  .modalMain {
+    font-size: pc(15);
+  }
+
+  .modalMain_txt01 {
+    padding-top: ceil-unit(40, 920);
+  }
+  .modalFooter {
+    padding-top: pc(15);
+
+    label {
+      span {
+        padding-left: pc(7);
+        font-size: pc(16);
+      }
+    }
+
+    label:before {
+      top: pc(1);
+      width: pc(14);
+      height: pc(14);
+    }
+
+    input:checked + label:after {
+      top: pc(1);
+      left: pc(5);
+      width: pc(4);
+      height: pc(8);
+      border-bottom: 2px solid $c2;
+      border-right: 2px solid $c2;
+    }
+    .check_lead {
+      margin-bottom: pc(14);
+      font-size: pc(14);
+    }
+    .checkbox_wrap {
+      margin-bottom: pc(20);
+    }
+    .btn01 {
+      width: pc(260);
+      padding: pc(20) 0;
+      font-size: pc(14);
+      &::before {
+        width: pc(14);
+        height: pc(4);
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1251px) {
+  .modalWrap {
+    height: 710px;
+  }
+
+  .modalWrap_close {
+    top: -40px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .modalWrap_inner {
+    padding-bottom: 50px;
+  }
+
+  .modalArea {
+    padding: 50px 60px;
+    .kome {
+      margin-top: 0;
+      font-size: 14px;
+    }
+  }
+  .modal_ttl_wrap {
+    margin-bottom: 35px;
+  }
+  .modal_ttl_label {
+      margin-right: 10px;
+      padding: 10px 10px ;
+      font-size: 28px;
+  }
+  .modal_ttl {
+      font-size: 20px;
+  }
+  .modal_txt {
+    font-size: 14px;
+  }
+  .modal_txt + .modal_box {
+    margin-top: 20px;
+  }
+  .modal_box {
+    padding: 24px;
+    + .modal_box {
+      margin-top: 9px;
+    }
+  }
+  .modal_box_ttl {
+    margin-bottom: 14px;
+    font-size: 16px;
+  }
+  .modal_box1_ttl {
+    margin-bottom: 14px;
+    font-size: 20px;
+  }
+  .modal_box_txt {
+    font-size: 14px;
+  }
+  .modal_box1_txt {
+    font-size: 14px;
+  }
+  .modalMain {
+    font-size: 14px;
+
+  }
+  .modalMain {
+    font-size: 15px;
+  }
+
+  .modalFooter {
+    padding-top: 15px;
+
+    label {
+      span {
+        padding-left: 7px;
+        font-size: 16px;
+      }
+    }
+
+    label:before {
+      top: 2px;
+      width: 14px;
+      height: 14px;
+    }
+
+    input:checked + label:after {
+      top: 1px;
+      left: 5px;
+      width: 4px;
+      height: 8px;
+    }
+    .check_lead {
+      margin-bottom: 14px;
+      font-size: 14px;
+    }
+    .checkbox_wrap {
+      margin-bottom: 20px;
+    }
+    .btn01 {
+      width: 260px;
+      padding: 20px 0;
+      font-size: 14px;
+      &::before {
+        width: 14px;
+        height: 4px;
+      }
+    }
+  }
+  .modalMain {
+    font-size: 14px;
+  }
+}
+
+
+
+
+.modal_apply {
+  width: 100%;
+  text-align: center;
+  background: $c2;
+  position: relative;
+  margin-top: sp(40);
+  padding: sp(35) 0;
+  line-height: 1;
+  border-radius: sp(50);
+  display: block;
+  font-size: sp(30);
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.5em;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: sp(20);
+    height: sp(20);
+    background: url(../img/common/arrow01.png) no-repeat;
+    background-size: contain;
+    background-position: center;
+    right: sp(52);
+    top: 50%;
+    transform: translateY(-50%)
+  }
+}
+
+@media screen and (min-width:751px) {
+  .modal_apply {
+    width: ceil-unit(240, $lgInner);
+    margin: ceil-unit(30, $lgInner) auto 0;
+    padding: ceil-unit(20, $lgInner) 0;
+    border-radius: 50px;
+    display: block;
+    font-size: pc(18);
+    cursor: pointer;
+
+    &::before {
+      width: ceil-unit(25, 160);
+      height: ceil-unit(20, 160);
+      right: ceil-unit(18, 160);
+    }
+  }
+}
+
+@media screen and (min-width:1251px) {
+  .btn01 {
+    font-size: 14px;
+  }
+}
+
+.btn_ticket {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+@media screen and (min-width:751px) {
+  .btn_ticket {
+    bottom: 80px;
+    right: 2px;
+  }
+}
+
+@media screen and (min-width:751px) {
+  .artist {
+    .news_link {
+        padding-right: pc(30);
+        &::before,
+        &::after {
+            width: pc(23);
+            height: pc(23);
+        }
+        &::after {
+            transform: rotate(90deg);
+            right: pc(9);
+            margin-top: pc(-11);
+        }
+    }
+    .news_txt {
+        margin-top: pc(12);
+    }
+    .modalArea .kome {
+      margin-top: 0;
+      font-size: 14px;
+    }
+  }
+}
+@media screen and (min-width:1251px) {
+  .artist {
+    .news_link {
+        padding-right: 30px;
+        cursor: pointer;
+        &::before,
+        &::after {
+            width: 23px;
+            height: 23px;
+        }
+        &::after {
+            transform: rotate(90deg);
+            right: 10px;
+            margin-top: -11px;
+        }
+    }
+    .news_txt {
+        margin-top: 12px;
+    }
+  }
+}
+// 演出＆応援グッズバナー
+.bnr_goods {
+    width: 100%;
+    margin-top: sp(30);
+    border: solid 1px $c2;
+    a {
+        display: block;
+    }
+    @media screen and (min-width:751px) {
+        width: pc(260);
+        margin-top: pc(20);
+        border-width: 2px;
+    }
+    @media screen and (min-width:1251px) {
+        width: 260px;
+        margin-top: 20px;
+    }
+}
+// もっと見る
+.show_more {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: sp(500);
+  margin: sp(50) auto 0;
+  padding: sp(26) 0;
+  font-size: sp(26);
+  color: $c2;
+  border: solid 1px $c2;
+  border-radius: 50px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: .5s;
+  &::after {
+    content: "+";
+    display: block;
+    position: absolute;
+    top: 48%;
+    right: sp(40);
+    transform: translateY(-50%);
+    font-size: sp(34);
+    font-weight: normal;
+  }
+  &.is-active {
+    &::after {
+      content: "－";
+      top: 50%;
+      font-size: sp(24);
+    }
+  }
+  &:hover {
+      color: #fff;
+      border-color: #fff;
+      background-color: $c2;
+      opacity: 1;
+  }
+}
+@media screen and (min-width:751px) {
+  .show_more {
+    width: pc(300);
+    margin: pc(50) auto 0;
+    padding: pc(20) 0;
+    font-size: pc(14);
+    border-radius: 40px;
+    &::after {
+      right: pc(40);
+      font-size: pc(30);
+    }
+    &.is-active {
+      &::after {
+        font-size: pc(20);
+      }
+    }
+  }
+}
+@media screen and (min-width:1251px) {
+  .show_more {
+    width: 300px;
+    margin: 50px auto 0;
+    padding: 20px 0;
+    font-size: 14px;
+    cursor: pointer;
+    &::after {
+      right: 40px;
+      font-size: 30px;
+    }
+    &.is-active {
+      &::after {
+        font-size: 20px;
+      }
+    }
+  }
+}
+// タイトル下のリンク
+.info_link {
+  width: 100%;
+  margin: 0 auto sp(50);
+  padding: sp(40);
+  border: solid 2px $c2;
+  text-align: center;
+  .info_link_txt {
+    font-size: sp(30);
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    color: $c2;
+  }
+  .common_btn01 {
+    margin-top: sp(25);
+    background-color: $c2;
+    color: #fff;
+    &::before {
+      background-image: url(../img/common/arrow01.png);
+    }
+  }
+}
+@media screen and (min-width:751px) {
+  .info_link {
+    margin: 0 auto pc(50);
+    padding: pc(40);
+    .info_link_txt {
+      font-size: pc(20);
+      line-height: 1.4;
+    }
+    .common_btn01 {
+      display: inline-block;
+      width: auto;
+      margin-top: pc(10);
+      margin-left: auto;
+      margin-right: auto;
+      padding-right: pc(60);
+      padding-left: pc(60);
+    }
+  }
+}
+@media screen and (min-width:1251px) {
+  .info_link {
+    width: 60%;
+    margin: 0 auto 50px;
+    padding: 18px 20px 25px;
+    .info_link_txt {
+      font-size: 20px;
+    }
+    .common_btn01 {
+      margin-top: 10px;
+      padding-right: 60px;
+      padding-left: 60px;
+    }
+  }
+  .fc {
+    font-size: 12px
+  }
+}
+// リニューアル
+@media screen and (min-width:751px) {
+  /*------------------------------
+  main内section
+  --------------------------------*/
+  #artist {
+    .main {
+      padding: 9px;
+      section + section {
+        margin-top: 9px;
+      }
+    }
+    .inner {
+      max-width: 100%;
+    }
+    .panList {
+      font-size: pc(11);
+      padding: 0;
+    }
+    .ttl {
+      margin-top: pc(40);
+      margin-bottom: pc(24);
+      padding: 0 pc(25);
+
+      h1 {
+        font-size: pc(34);
+        line-height: ceil-unit(46,34,"em");
+        text-align: center;
+      }
+    }
+    .artist_anchor {
+      width: pc(800);
+      margin: 0 auto pc(30);
+      > li {
+        width: pc(260);
+        a {
+          padding: pc(14);
+          border-radius: pc(50);
+          font-size: pc(14);
+          line-height: 1;
+          &::before {
+            right: pc(24);
+            width: pc(10);
+            height: pc(8);
+          }
+        }
+      }
+    }
+    .artist_sec_horizon {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 9px;
+      margin-bottom: 9px;
+      section.artist_sec {
+        width: calc(50% - 4.5px);
+        margin-top: 0;
+        padding-right: pc(60);
+        padding-left: pc(116);
+        &:nth-of-type(2n) {
+          padding-left: pc(60);
+          padding-right: pc(116);
+        }
+      }
+    }
+    .artist_sec {
+      padding: pc(85) pc(115);
+    }
+    .artist_sec_inr {
+      max-width: 1000px;
+      margin: 0 auto;
+      + .artist_sec_inr {
+        margin-top: pc(90);
+      }
+    }
+    .secTtl {
+      margin-bottom: pc(32);
+      padding-bottom: pc(10);
+      font-size: pc(22);
+      line-height: ceil-unit(36,22,"em");
+    }
+    .p_cmn {
+      font-size: pc(14);
+      line-height: ceil-unit(26,14,"em");
+    }
+    .performance_list {
+      > li {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: pc(17);
+        padding-bottom: pc(17);
+        &::after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+        &:last-child {
+          padding-bottom: pc(17);
+          border-bottom: solid 1px #e1e1e1;
+        }
+      }
+    }
+    .peromance_label_wrap {
+      margin-bottom: 4px;
+    }
+    .peromance_label {
+      float: left;
+      margin-right: pc(10);
+      margin-bottom: 0;
+      padding: pc(4);
+      font-size: pc(10);
+    }
+    .performance_cont {
+      align-items: center;
+      font-size: pc(16);
+      line-height: ceil-unit(24,16,"em");
+    }
+    .performance_cont_inr {
+      flex-grow: 1;
+      align-items: center;
+    }
+    .performance_cont_date {
+      flex-shrink: 0;
+      min-width: pc(140);
+      margin-right: pc(15);
+      text-align: left;
+      span {
+        display: inline;
+        font-size: pc(18);
+      }
+    }
+    .performance_cont_info {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding-right: pc(180);
+    }
+    .performance_cont_place {
+      margin-right: pc(35);
+    }
+    .performance_cont_time {
+      flex-shrink: 0;
+      margin-right: pc(16);
+      margin-left: auto;
+    }
+    .performance_status {
+      flex-shrink: 1;
+      width: 100%;
+      margin-top: pc(10);
+      margin-right: 0;
+      margin-left: 0;
+      padding: pc(12);
+      + .performance_status {
+        margin-top: pc(6);
+      }
+    }
+    .performance_cont_label {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: pc(180);
+      margin-top: 0;
+      padding: pc(2) 0;
+      font-size: pc(12);
+      + .performance_cont_label {
+        margin-left: pc(15);
+      }
+    }
+    .performance_status_label {
+      margin-right: pc(8);
+      padding: pc(4) pc(5);
+      font-size: pc(10);
+    }
+    .performance_status_txt {
+      font-size: pc(15);
+    }
+    .performance_status_btn {
+      padding: pc(6) pc(12) pc(6) pc(30);
+      font-size: pc(12);
+      border-radius: pc(20);
+      &::after {
+        width: pc(9);
+        height: pc(3);
+        margin-left: pc(10);
+      }
+    }
+    // 販売スケジュール
+    .schedule_list {
+      > li {
+        margin-bottom: pc(28);
+        padding-bottom: pc(24);
+        &::after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+        &:last-child {
+          padding-bottom: pc(24);
+          border-bottom: solid 1px #e1e1e1;
+        }
+      }
+    }
+    .schedule_class {
+      margin-bottom: pc(12);
+      font-size: pc(17);
+      line-height: ceil-unit(24,16,"em");
+      .performance_status_btn {
+        margin-left: pc(10);
+      }
+    }
+    .schedule_cont {
+      float: left;
+      max-width: 42%;
+      + .schedule_cont {
+        margin-top: 0;
+        margin-left: pc(30);
+      }
+      &-1column {
+        max-width: 100%;
+      }
+    }
+    .schedule_place {
+      display: inline-block;
+      margin-bottom: pc(6);
+      padding: pc(4) pc(5);
+      font-size: pc(10);
+
+    }
+    .schedule_info {
+      font-size: pc(12);
+    }
+    .schedule_info_ttl {
+      margin-right: pc(12);
+    }
+    // お知らせ
+    .news_all {
+      > li {
+        margin-bottom: pc(23);
+        padding-bottom: pc(23);
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .news_toggle_btn {
+      &::before {
+        top: pc(7);
+        width: pc(16);
+        height: 1px;
+      }
+      &::after {
+        right: pc(7);
+        height: pc(16);
+      }
+    }
+    .news_info {
+      margin-bottom: 0;
+    }
+    .news_date {
+      order: 2;
+      font-size: pc(16);
+    }
+    .news_label {
+      order: 1;
+      margin-left: 0;
+      margin-right: pc(13);
+      padding: pc(4) pc(10);
+      font-size: pc(10);
+    }
+    .news_txt {
+      line-height: ceil-unit(24,14,"em");
+    }
+    .news_toggle_cont {
+      margin-top: pc(16);
+    }
+    // 公演情報　テキストのみ
+    .performance_info_list {
+      > li {
+        margin-bottom: pc(20);
+        padding-bottom: pc(20);
+        &:last-child {
+          padding-bottom: 0;
+          // border-bottom: solid 1px #e1e1e1;
+        }
+      }
+      // 公演情報　写真付き
+      &--photo {
+        > li {
+          width: pc(204);
+          margin-bottom: pc(14);
+        }
+        .performance_info_date {
+          margin-top: pc(10);
+          font-size: pc(13);
+          line-height: ceil-unit(19,13,"em");
+        }
+        .performance_info_name {
+          font-size: pc(13);
+          line-height: ceil-unit(19,13,"em");
+        }
+      }
+    }
+    
+    // チケット情報
+    .ticketList01 {
+      > ul {
+        li {
+          margin-bottom: pc(26);
+          padding-bottom: pc(26);
+          &:last-child {
+            padding-bottom: pc(26);
+            border-bottom: solid 1px #e1e1e1;
+          }
+        }
+      }
+      
+      dt {
+        font-size: pc(18);
+        margin-bottom: pc(6);
+      }
+      dd {
+        margin-bottom: pc(6);
+        font-size: pc(14);
+        line-height: ceil-unit(26,14,"em");
+        small {
+          font-size: pc(12);
+          line-height: ceil-unit(20,12,"em");
+        }
+        &.small {
+          font-size: pc(12);
+        }
+      }
+    }
+    .kome_list {
+      font-size: pc(12);
+    }
+    // 主催者からの興行に関する注意事項
+    #attention {
+      .secTtl {
+        width: 80vw;
+        &::before {
+          top: pc(7);
+          width: pc(16);
+        }
+        &::after {
+          right: pc(7);
+          height: pc(16);
+        }
+      }
+    }
+    .attention_cont {
+      display: none;
+      margin-top: pc(16);
+    }
+    .attention_list {
+      > li {
+        font-size: pc(12);
+        line-height: ceil-unit(20,12,"em");
+      }
+      .att_sub_ttl {
+        font-weight: bold;
+      }
+      li h2 {
+        font-weight: bold;
+      }
+      .sub_attention {
+        margin-left: 1.33333vw;
+      }
+      .pp_box {
+        margin-left: 1.33333vw;
+        dl {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        dt {
+          width: 20%;
+        }
+        dd {
+          width: 80%;
+        }
+      }
+    }
+    .attention_txt-red {
+      color: #f02300;
+    }
+  }
+}
+@media screen and (min-width:1251px) {
+  /*------------------------------
+  main内section
+  --------------------------------*/
+  #artist {
+    .panList {
+      width: 1000px;
+      margin: 0 auto;
+      font-size: 11px;
+    }
+    .ttl {
+      margin-top: 40px;
+      margin-bottom: 24px;
+      padding: 0;
+
+      h1 {
+        font-size: 34px;
+      }
+    }
+    .artist_anchor {
+      width: 800px;
+      margin: 0 auto 30px;
+      > li {
+        width: 260px;
+        a {
+          padding: 14px;
+          border-radius: 50px;
+          font-size: 14px;
+          &::before {
+            right: 24px;
+            width: 10px;
+            height: 8px;
+          }
+        }
+      }
+    }
+    .artist_sec_horizon {
+      section.artist_sec {
+        padding-right: 60px;
+        padding-left: 0;
+        &::after {
+          content: "";
+          display: inline;
+          clear: both;
+        }
+        .artist_sec_inr {
+          width: 435px;
+          float: right;
+        }
+        &:nth-of-type(2n) {
+          padding-left: 60px;
+          padding-right: 0;
+          .artist_sec_inr {
+            float: left;
+          }
+        }
+      }
+    }
+    .artist_sec {
+      padding: 85px 115px;
+    }
+    .artist_sec_inr {
+      + .artist_sec_inr {
+        margin-top: 90px;
+      }
+    }
+    .secTtl {
+      margin-bottom: 40x;
+      padding-bottom: 10px;
+      font-size: 22px;
+    }
+    .p_cmn {
+      font-size: 14px;
+    }
+    .performance_list {
+      > li {
+        margin-bottom: 17px;
+        padding-bottom: 17px;
+        &:last-child {
+          padding-bottom: 17px;
+        }
+      }
+    }
+    .peromance_label_wrap {
+        margin-bottom: 4px;
+    }
+    .peromance_label {
+      margin-right: 10px;
+      padding: 4px;
+      font-size: 10px;
+    }
+    .performance_cont {
+      align-items: center;
+      font-size: 16px;
+    }
+    .performance_cont_date {
+      min-width: 140px;
+      margin-right: 15px;
+      span {
+        font-size: 18px;
+      }
+    }
+    .performance_cont_info {
+      padding-right: 180px;
+    }
+    .performance_cont_place {
+      margin-right: 35px;
+    }
+    .performance_status {
+      margin-top: 10px;
+      padding: 12px;
+      + .performance_status {
+        margin-top: 6px;
+      }
+    }
+    .performance_cont_label {
+      width: 180px;
+      padding: 2px 0;
+      font-size: 12px;
+      + .performance_cont_label {
+        margin-left: 10px;
+      }
+    }
+    .performance_status_label {
+      margin-right: 8px;
+      padding: 4px 5px;
+      font-size: 10px;
+    }
+    .performance_status_txt {
+      font-size: 15px;
+    }
+    .performance_status_btn {
+      padding: 6px 12px 6px 30px;
+      font-size: 12px;
+      border-radius: 20px;
+      &::after {
+        width: 9px;
+        height: 3px;
+        margin-left: 10px;
+      }
+    }
+    // 販売スケジュール
+    .schedule_list {
+      > li {
+        margin-bottom: 28px;
+        padding-bottom: 24px;
+        &:last-child {
+          padding-bottom: 24px;
+        }
+      }
+    }
+    .schedule_class {
+      margin-bottom: 12px;
+      font-size: 17px;
+      .performance_status_btn {
+        margin-left: 20px;
+      }
+    }
+    .schedule_cont {
+      + .schedule_cont {
+        margin-left: 30px;
+      }
+    }
+    .schedule_place {
+      margin-bottom: 6px;
+      padding: 4px 5px;
+      font-size: 10px;
+    }
+    .schedule_info {
+      font-size: 12px;
+    }
+    .schedule_info_ttl {
+      margin-right: 12px;
+    }
+    .schedule_info_time {
+      width: 910px;
+    }
+    // お知らせ
+    .news_all {
+      > li {
+        margin-bottom: 23px;
+        padding-bottom: 23px;
+      }
+    }
+    .news_toggle_btn {
+      cursor: pointer;
+      &::before {
+        top: 7px;
+        width: 16px;
+        height: 1px;
+      }
+      &::after {
+        right: 7px;
+        height: 16px;
+      }
+    }
+    .news_date {
+      font-size: 16px;
+    }
+    .news_label {
+      margin-right: 13px;
+      padding: 4px 10px;
+      font-size: 10px;
+    }
+    .news_toggle_cont {
+      margin-top: 16px;
+    }
+    // 公演情報
+    .performance_info_list {
+      > li {
+        margin-bottom:20px;
+        padding-bottom:20px;
+        &:last-child {
+          padding-bottom:0;
+        }
+      }
+      // 公演情報　写真付き
+      &--photo {
+        > li {
+          width: 204px;
+          margin-bottom: 14px;
+        }
+        .performance_info_date {
+          margin-top: 4px;
+          font-size: 13px;
+        }
+        .performance_info_name {
+          font-size: 13px;
+        }
+      }
+    }
+    // チケット情報
+    .ticketList01 {
+      > ul {
+        li {
+          margin-bottom: 26px;
+          padding-bottom: 26px;
+          &:last-child {
+            padding-bottom: 26px;
+          }
+        }
+      }
+      dt {
+        font-size: 18px;
+        margin-bottom: 6px;
+      }
+      dd {
+        margin-bottom: 6px;
+        font-size: 14px;
+        small {
+          font-size: 12px;
+        }
+        &.small {
+          font-size: 12px;
+        }
+      }
+    }
+    .kome_list {
+      font-size: 12px;
+    }
+    // 主催者からの興行に関する注意事項
+    #attention {
+      .secTtl {
+        width: 1000px;
+        cursor: pointer;
+        &::before {
+          top: 7px;
+          width: 16px;
+        }
+        &::after {
+          right: 7px;
+          height: 16px;
+        }
+      }
+    }
+    .attention_cont {
+      margin-top: 16px;
+    }
+    .attention_list {
+      > li {
+        font-size: 12px;
+      }
+      .sub_attention {
+        margin-left: 20px;
+      }
+      .pp_box {
+        margin-left: 20px;
+        dl {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        dt {
+          width: 20%;
+        }
+        dd {
+          width: 80%;
+        }
+      }
+    }
+  }
+  .modalArea .kome {
+    margin-top: 0;
+    font-size: 14px;
+  }
+}
+.app_badges {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+}
+input[type="submit"] {
+  appearance: none;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  font: inherit;
+  outline: none;
+}

@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+//sp用
+@function sp($pxValue) {
+  $spBreakPoint: 750;
+  @return (($pxValue / $spBreakPoint) * 100) + vw;
+}
+
+//pc用
+@function pc($pxValue02) {
+  $pcBreakPoint: 1250;
+  @return (($pxValue02 / $pcBreakPoint) * 100) + vw;
+}
+
+
+//割合
+@function ceil-unit($imgWidth, $dividesWidth, $unit: "%") {
+  // 小数点以下四桁目を切り上げ
+  $ceilNumber: 1;
+
+  @if $unit=="%" {
+    // %
+    $ceilNumber: ceil($imgWidth*100000/$dividesWidth)/1000;
+    @return percentage($ceilNumber/100);
+  }
+
+  @else {
+    @if $unit=="em" {
+      // 倍率？（em...）
+      $ceilNumber: ceil($imgWidth*1000/$dividesWidth)/1000;
+    }
+
+    @else {
+      $ceilNumber: ceil($imgWidth*100000/$dividesWidth)/1000;
+    }
+
+    @return $ceilNumber + unquote($unit);
+  }
+}
+
+$lgMaxW:1250;
+$lgInner:1050;
+$smMaxW: 750px;
+$smInner: 650;
+$c1: #0016E5;
+$c2: #0099FF;
+$c3: #EBEEF2;
+$c4: #F0F5F5;
+$c5: #1A1A1A;
+
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;500&display=swap');

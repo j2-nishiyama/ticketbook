@@ -1,0 +1,953 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto:wght@400;500&display=swap");
+em, strong, b {
+  font-weight: bold;
+}
+
+.hidden_pc {
+  display: none !important;
+}
+
+@media screen and (max-width: 750px) {
+  .hidden_pc {
+    display: block !important;
+  }
+  .hidden_sp {
+    display: none !important;
+  }
+}
+
+/*------------------------------
+main内section
+--------------------------------*/
+#resale {
+  padding-bottom: 17.33333vw;
+}
+
+#resale .contents {
+  padding: 0;
+  background-color: #00abff;
+  letter-spacing: .01em;
+}
+
+#resale .main {
+  padding: 10px;
+  letter-spacing: .1em;
+}
+
+#resale .main section + section {
+  margin-top: 10px;
+}
+
+#resale .inner {
+  width: 100%;
+}
+
+#resale .panList {
+  font-size: 2.4vw;
+  padding: 0 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#resale .panList li:not(:first-child) {
+  position: relative;
+  padding-left: 1.2em;
+  margin-left: .5em;
+  color: #fff;
+}
+
+#resale .panList li:not(:first-child)::before {
+  content: '>';
+  display: block;
+  position: absolute;
+  left: 0;
+}
+
+#resale .panList a {
+  color: #fff;
+}
+
+#resale .lead_area {
+  padding: 6.66667vw 0 10.66667vw;
+}
+
+#resale .p-ttl {
+  position: relative;
+  margin: 0 auto;
+  font-size: 6vw;
+  font-weight: bold;
+  line-height: 1.4em;
+  text-align: center;
+  color: #fff;
+  letter-spacing: .05em;
+}
+
+#resale .p-ttl span {
+  display: inline-block;
+  color: #fae480;
+  letter-spacing: .01em;
+}
+
+#resale .p-ttl::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  width: 48.33333vw;
+  height: 0.8vw;
+  background-color: #fae480;
+}
+
+#resale .lead_contents {
+  margin-top: 5.33333vw;
+  padding: 0 0.66667vw;
+  padding-bottom: 77.6vw;
+  background: url(../images/lead_contents_elem.png) no-repeat 50% 100%;
+  background-size: 57.33333vw;
+}
+
+#resale .lead_contents_ttl {
+  font-size: 4.8vw;
+  font-weight: bold;
+  line-height: 1.556em;
+  color: #fff;
+  text-align: center;
+}
+
+#resale .lead_contents_sholder {
+  display: block;
+  width: 53.6vw;
+  height: 13.46667vw;
+  margin: 0 auto 3.33333vw;
+  padding-top: 4vw;
+  color: #00abff;
+  font-size: 3.73333vw;
+  line-height: 1;
+  text-align: center;
+  background: url(../images/lead_contents_sholder.png) no-repeat 50% 0;
+  background-size: 100% auto;
+}
+
+#resale .lead_contents_txt {
+  width: 98%;
+  margin: 4.66667vw auto;
+  font-size: 3.46667vw;
+  line-height: 1.693em;
+  color: #fff;
+  text-align: justify;
+}
+
+#resale .resale_link {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding: 2.66667vw 3.33333vw;
+  background-color: #000;
+  z-index: 1;
+}
+
+#resale .resale_link_btn a {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 45.86667vw;
+  height: 12.53333vw;
+  font-size: 2.93333vw;
+  font-weight: bold;
+  border-radius: 6.13333vw;
+  color: #222;
+  background-color: #fde114;
+}
+
+#resale .resale_link_btn a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 5.33333vw;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 3.06667vw;
+  height: 0.93333vw;
+  background: url(../images/resale_link_btn.png) no-repeat 0 0;
+  background-size: 100% auto;
+}
+
+#resale .resale_link_btn + .resale_link_btn {
+  margin-left: 1.33333vw;
+}
+
+#resale .resale_link_btn-2 a {
+  color: #222;
+  background-color: #fff;
+}
+
+#resale .lead_point {
+  margin-top: 4vw;
+  padding: 0 0.66667vw;
+}
+
+#resale .lead_point_list > li {
+  padding: 8.66667vw 6.93333vw 6.66667vw;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 2.13333vw;
+}
+
+#resale .lead_point_list > li + li {
+  margin-top: 4vw;
+}
+
+#resale .lead_point_list_num {
+  position: relative;
+  text-align: center;
+  line-height: 1;
+}
+
+#resale .lead_point_list_num::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0.26667vw;
+  background-color: #323232;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#resale .lead_point_list_num > span {
+  position: relative;
+  display: inline-block;
+  padding: 0 3.2vw;
+  font-size: 4.8vw;
+  font-weight: bold;
+  background-color: #fff;
+  letter-spacing: .01em;
+}
+
+#resale .lead_point_list_num > span > span {
+  color: #00abff;
+}
+
+#resale .lead_point_list_txt {
+  margin-top: 5.33333vw;
+  text-align: center;
+  font-size: 4vw;
+  font-weight: bold;
+  line-height: 1.534em;
+  letter-spacing: .06em;
+}
+
+#resale .lead_point_list_txt > span {
+  color: #00abff;
+}
+
+#resale .ticket_area {
+  margin: 0 -10px;
+  padding: 12vw 5.33333vw;
+  background-color: #0453c0;
+}
+
+#resale .ticket_area_ttl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 5.33333vw;
+  font-weight: bold;
+  color: #fff;
+}
+
+#resale .ticket_area_ttl::before {
+  content: "";
+  width: 7.06667vw;
+  height: 4.53333vw;
+  margin-right: 2.66667vw;
+  background: url(../images/ticket_area_ttl.png) no-repeat 0 0;
+  background-size: 100% auto;
+}
+
+#resale .ticket_area_ttl span {
+  color: #fae480;
+  border-bottom: solid 0.66667vw #fae480;
+}
+
+#resale .ticket_list {
+  margin-top: 6vw;
+}
+
+#resale .ticket_list > li {
+  position: relative;
+  padding: 1.33333vw;
+  background-color: #f5f8fd;
+}
+
+#resale .ticket_list > li:not(:first-child) {
+  margin-top: 1.33333vw;
+}
+
+#resale .ticket_list > li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #323232;
+}
+
+#resale .ticket_list > li.is_new .ticket_txt, #resale .ticket_list > li.is_accept .ticket_txt {
+  padding-top: 6vw;
+}
+
+#resale .ticket_list > li.is_new .ticket_txt span, #resale .ticket_list > li.is_accept .ticket_txt span {
+  display: block;
+  position: absolute;
+  top: 0.66667vw;
+  left: 3.06667vw;
+  padding: 0.5vw 1vw;
+  font-size: 2.4vw;
+  font-weight: normal;
+  line-height: 1.45;
+}
+
+#resale .ticket_list > li.is_new .ticket_txt span {
+  color: #fff;
+  background-color: #ed1c24;
+}
+
+#resale .ticket_list > li.is_accept .ticket_txt span {
+  color: #323232;
+  background-color: #ffde00;
+}
+
+#resale .ticket_img {
+  width: 27.6vw;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+#resale .ticket_txt {
+  position: relative;
+  padding-top: 1.33333vw;
+  padding-left: 3.5vw;
+  font-size: 3.50667vw;
+  font-weight: 500;
+  line-height: 1.334em;
+}
+
+#resale .ticket_txt span {
+  display: none;
+}
+
+#resale .resale_sec_horizon {
+  margin-top: 10px;
+}
+
+#resale .resale_sec {
+  padding: 6.66667vw;
+  background-color: #fff;
+}
+
+#resale .resale_sec_inr + .resale_sec_inr {
+  margin-top: 13.33333vw;
+}
+
+#resale .resale_sec_inr .resale_link {
+  display: none;
+}
+
+#resale .resale_sec_ttl {
+  font-size: 4vw;
+  font-weight: bold;
+}
+
+#resale .resale_step {
+  margin-top: 6.66667vw;
+}
+
+#resale .resale_step > li {
+  position: relative;
+}
+
+#resale .resale_step > li + li {
+  margin-top: 5.33333vw;
+}
+
+#resale .resale_step > li + li::before {
+  content: "";
+  position: absolute;
+  top: -4vw;
+  left: 0;
+  right: 0;
+  width: 4.26667vw;
+  height: 2.66667vw;
+  margin: auto;
+  background: url(../images/resale_step.png) no-repeat 0 0;
+  background-size: 100% auto;
+}
+
+#resale .resale_step > li > dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 17.06667vw;
+}
+
+#resale .resale_step_num {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 11.46667vw;
+  color: #fff;
+  font-size: 2.4vw;
+  line-height: 1;
+  background-color: #00abff;
+}
+
+#resale .resale_step_num span {
+  margin-top: 0.66667vw;
+  font-size: 4.53333vw;
+}
+
+#resale .resale_step_txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 2.66667vw;
+  padding-right: 0;
+  color: #fff;
+  font-size: 3.33333vw;
+  font-weight: bold;
+  line-height: 1.6em;
+  background-color: #323232;
+}
+
+#resale .resale_step-2 > li + li::before {
+  background-image: url(../images/resale_step-2.png);
+}
+
+#resale .resale_step-2 .resale_step_num {
+  background-color: #323232;
+}
+
+#resale .resale_step-2 .resale_step_txt {
+  background-color: #00abff;
+}
+
+#resale .resale_annotation {
+  margin-top: 5.33333vw;
+}
+
+#resale .resale_annotation_ttl {
+  font-size: 3.73333vw;
+  font-weight: bold;
+}
+
+#resale .resale_annotation_list {
+  margin-top: 2.66667vw;
+}
+
+#resale .resale_annotation_list > li {
+  position: relative;
+  padding-left: 1em;
+  font-size: 3.2vw;
+  line-height: 1.584em;
+  text-align: justify;
+}
+
+#resale .resale_annotation_list > li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+}
+
+#resale .resale_annotation_list > li.kome {
+  padding-left: 1.5em;
+}
+
+#resale .resale_annotation_list > li.kome::before {
+  content: "※";
+}
+
+@media screen and (min-width: 751px) {
+  #resale {
+    padding-bottom: 0;
+  }
+  #resale .contents {
+    letter-spacing: .05em;
+  }
+  #resale .main {
+    padding: 9px;
+  }
+  #resale .main section + section {
+    margin-top: 9px;
+  }
+  #resale .inner {
+    max-width: 100%;
+  }
+  #resale .panList {
+    font-size: 0.88vw;
+    padding: 0;
+  }
+  #resale .lead_area {
+    padding: 5.6vw 0 6.4vw;
+  }
+  #resale .p-ttl {
+    font-size: 2.72vw;
+    line-height: 1.353em;
+    letter-spacing: 0.04em;
+  }
+  #resale .p-ttl span {
+    border-bottom: none;
+  }
+  #resale .p-ttl::before {
+    width: 36.8vw;
+    height: 0.32vw;
+  }
+  #resale .lead_contents {
+    width: 67.68vw;
+    margin: 3.2vw auto 0;
+    padding: 2vw 0 1.6vw;
+    padding-bottom: 1.6vw;
+    background-position: 100% 100%;
+    background-size: 20vw;
+  }
+  #resale .lead_contents_ttl {
+    font-size: 2.24vw;
+    line-height: 1.6em;
+    text-align: left;
+  }
+  #resale .lead_contents_sholder {
+    width: 20.88vw;
+    height: 5.28vw;
+    margin: 0 0 1.2vw;
+    padding-top: 1.6vw;
+    font-size: 1.44vw;
+  }
+  #resale .lead_contents_txt {
+    margin-top: 1.12vw;
+    font-size: 1.2vw;
+    line-height: 1.8em;
+  }
+  #resale .resale_link {
+    position: relative;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 2.88vw;
+    padding: 0;
+    background-color: transparent;
+  }
+  #resale .resale_link_btn a {
+    width: 17.6vw;
+    height: 4.8vw;
+    font-size: 1.12vw;
+    border-radius: 2.4vw;
+  }
+  #resale .resale_link_btn a::before {
+    right: 1.84vw;
+    width: 1.2vw;
+    height: 0.4vw;
+  }
+  #resale .resale_link_btn + .resale_link_btn {
+    margin-left: 0.48vw;
+  }
+  #resale .resale_link_btn-2 a {
+    color: #fff;
+    background-color: #222;
+  }
+  #resale .resale_link_btn-2 a::before {
+    background: url(../images/resale_link_btn-2.png) no-repeat 0 0;
+  }
+  #resale .lead_point {
+    width: 84vw;
+    margin: 3.68vw auto 0;
+    padding: 0;
+  }
+  #resale .lead_point_list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #resale .lead_point_list > li {
+    width: 27.2vw;
+    padding: 3.2vw 2.72vw;
+    border-radius: 0.96vw;
+  }
+  #resale .lead_point_list > li + li {
+    margin-top: 0;
+  }
+  #resale .lead_point_list_num::before {
+    height: 1px;
+  }
+  #resale .lead_point_list_num > span {
+    padding: 0 0.64vw;
+    font-size: 1.44vw;
+    letter-spacing: .05em;
+  }
+  #resale .lead_point_list_txt {
+    margin-top: 2.4vw;
+    font-size: 1.44vw;
+    line-height: 1.556em;
+    letter-spacing: .05em;
+  }
+  #resale .ticket_area {
+    margin: 0;
+    padding: 6.4vw 0;
+  }
+  #resale .ticket_area_ttl {
+    font-size: 2.08vw;
+  }
+  #resale .ticket_area_ttl::before {
+    width: 2.88vw;
+    height: 1.76vw;
+    margin-right: 1.2vw;
+  }
+  #resale .ticket_area_ttl span {
+    border-bottom-width: 0.24vw;
+  }
+  #resale .ticket_list {
+    width: 84vw;
+    display: block;
+    margin: 3.52vw auto 0;
+  }
+  #resale .ticket_list > li {
+    width: 100%;
+    padding: 0;
+  }
+  #resale .ticket_list > li:not(:first-child) {
+    margin-top: 0.8vw;
+  }
+  #resale .ticket_list > li.is_new .ticket_txt, #resale .ticket_list > li.is_accept .ticket_txt {
+    padding-top: 1.44vw;
+    padding-right: 5.2vw;
+  }
+  #resale .ticket_list > li.is_new .ticket_txt span, #resale .ticket_list > li.is_accept .ticket_txt span {
+    position: relative;
+    display: inline-block;
+    top: -0.16vw;
+    left: auto;
+    padding: 0.16vw 0.32vw;
+    font-size: 0.88vw;
+  }
+  #resale .ticket_img {
+    width: 12.8vw;
+  }
+  #resale .ticket_txt {
+    width: 100%;
+    padding: 1.6vw;
+    font-size: 1.36vw;
+    line-height: 1.118em;
+  }
+  #resale .resale_sec_horizon {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 9px;
+  }
+  #resale .resale_sec_horizon section.resale_sec {
+    width: calc(50% - 4.5px);
+    margin-top: 0;
+    padding-right: 4.8vw;
+    padding-left: 9.28vw;
+  }
+  #resale .resale_sec_horizon section.resale_sec:nth-of-type(2n) {
+    padding-left: 4.8vw;
+    padding-right: 9.28vw;
+  }
+  #resale .resale_sec {
+    padding: 6.8vw 9.2vw;
+  }
+  #resale .resale_sec_inr {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  #resale .resale_sec_inr + .resale_sec_inr {
+    margin-top: 7.2vw;
+  }
+  #resale .resale_sec_inr .resale_link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #resale .resale_sec_ttl {
+    font-size: 1.76vw;
+  }
+  #resale .resale_step {
+    margin-top: 2.4vw;
+  }
+  #resale .resale_step > li {
+    position: relative;
+  }
+  #resale .resale_step > li + li {
+    margin-top: 2.24vw;
+  }
+  #resale .resale_step > li + li::before {
+    top: -1.6vw;
+    width: 1.28vw;
+    height: 0.8vw;
+  }
+  #resale .resale_step > li > dl {
+    min-height: 6.72vw;
+  }
+  #resale .resale_step_num {
+    width: 4.8vw;
+    font-size: 0.8vw;
+  }
+  #resale .resale_step_num span {
+    margin-top: 0.32vw;
+    font-size: 1.76vw;
+  }
+  #resale .resale_step_txt {
+    padding: 1.6vw;
+    padding-right: 0;
+    font-size: 1.32vw;
+    line-height: 1.589em;
+    letter-spacing: .03em;
+  }
+  #resale .resale_annotation {
+    margin-top: 4vw;
+  }
+  #resale .resale_annotation_ttl {
+    font-size: 1.2vw;
+  }
+  #resale .resale_annotation_list {
+    margin-top: 1.2vw;
+  }
+  #resale .resale_annotation_list > li {
+    font-size: 1.04vw;
+    line-height: 1.77em;
+    text-align: justify;
+  }
+}
+
+@media screen and (min-width: 1251px) {
+  #resale .panList {
+    width: 1000px;
+    margin: 0 auto;
+    font-size: 11px;
+  }
+  #resale .lead_area {
+    padding: 70px 0 80px;
+  }
+  #resale .p-ttl {
+    font-size: 34px;
+  }
+  #resale .p-ttl::before {
+    width: 460px;
+    height: 4px;
+  }
+  #resale .lead_contents {
+    width: 846px;
+    margin: 54px auto 0;
+    padding: 31px 0 20px;
+    padding-bottom: 20px;
+    background-size: 290px;
+  }
+  #resale .lead_contents_ttl {
+    font-size: 28px;
+  }
+  #resale .lead_contents_sholder {
+    width: 261px;
+    height: 66px;
+    margin: 0 0 15px;
+    padding-top: 20px;
+    font-size: 18px;
+  }
+  #resale .lead_contents_txt {
+    margin-top: 14px;
+    font-size: 15px;
+  }
+  #resale .resale_link {
+    margin-top: 36px;
+  }
+  #resale .resale_link_btn a {
+    width: 220px;
+    height: 60px;
+    font-size: 14px;
+    border-radius: 30px;
+  }
+  #resale .resale_link_btn a::before {
+    right: 23px;
+    width: 15px;
+    height: 4px;
+  }
+  #resale .resale_link_btn + .resale_link_btn {
+    margin-left: 6px;
+  }
+  #resale .lead_point {
+    width: 1050px;
+    margin: 46px auto 0;
+  }
+  #resale .lead_point_list > li {
+    width: 340px;
+    padding: 40px 34px;
+    border-radius: 12px;
+  }
+  #resale .lead_point_list_num > span {
+    padding: 0 8px;
+    font-size: 18px;
+  }
+  #resale .lead_point_list_txt {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  #resale .ticket_area {
+    margin: 0;
+    padding: 80px 90px;
+  }
+  #resale .ticket_area_ttl {
+    font-size: 26px;
+  }
+  #resale .ticket_area_ttl::before {
+    width: 36px;
+    height: 22px;
+    margin-right: 15px;
+  }
+  #resale .ticket_area_ttl span {
+    border-bottom-width: 3px;
+  }
+  #resale .ticket_list {
+    width: 1050px;
+    margin: 44px auto 0;
+  }
+  #resale .ticket_list > li:not(:first-child) {
+    margin-top: 10px;
+  }
+  #resale .ticket_list > li.is_new .ticket_txt, #resale .ticket_list > li.is_accept .ticket_txt {
+    padding-top: 18px;
+    padding-right: 65px;
+  }
+  #resale .ticket_list > li.is_new .ticket_txt span, #resale .ticket_list > li.is_accept .ticket_txt span {
+    top: -2px;
+    padding: 2px 4px;
+    font-size: 11px;
+  }
+  #resale .ticket_img {
+    width: 160px;
+  }
+  #resale .ticket_txt {
+    padding: 20px;
+    font-size: 17px;
+  }
+  #resale .resale_sec_horizon section.resale_sec {
+    padding-right: 90px;
+    padding-left: 0;
+  }
+  #resale .resale_sec_horizon section.resale_sec::after {
+    content: "";
+    display: inline;
+    clear: both;
+  }
+  #resale .resale_sec_horizon section.resale_sec .resale_sec_inr {
+    width: 430px;
+    float: right;
+  }
+  #resale .resale_sec_horizon section.resale_sec:nth-of-type(2n) {
+    padding-left: 90px;
+    padding-right: 0;
+  }
+  #resale .resale_sec_horizon section.resale_sec:nth-of-type(2n) .resale_sec_inr {
+    float: left;
+  }
+  #resale .resale_sec {
+    padding: 60px 115px;
+  }
+  #resale .resale_sec_inr + .resale_sec_inr {
+    margin-top: 90px;
+  }
+  #resale .resale_sec_ttl {
+    font-size: 22px;
+  }
+  #resale .resale_step {
+    margin-top: 30px;
+  }
+  #resale .resale_step > li {
+    position: relative;
+  }
+  #resale .resale_step > li + li {
+    margin-top: 28px;
+  }
+  #resale .resale_step > li + li::before {
+    top: -20px;
+    width: 16px;
+    height: 10px;
+  }
+  #resale .resale_step > li > dl {
+    min-height: 84px;
+  }
+  #resale .resale_step_num {
+    width: 60px;
+    font-size: 10px;
+  }
+  #resale .resale_step_num span {
+    margin-top: 4px;
+    font-size: 22px;
+  }
+  #resale .resale_step_txt {
+    padding: 15px 20px;
+    padding-right: 0;
+    font-size: 16.5px;
+  }
+  #resale .resale_annotation {
+    margin-top: 50px;
+  }
+  #resale .resale_annotation_ttl {
+    font-size: 15px;
+  }
+  #resale .resale_annotation_list {
+    margin-top: 10px;
+  }
+  #resale .resale_annotation_list > li {
+    font-size: 13px;
+    letter-spacing: .03em;
+  }
+}
+/*# sourceMappingURL=resale.css.map */
