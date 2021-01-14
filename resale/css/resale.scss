@@ -424,10 +424,11 @@ main内section
         &::before {
           content: "※";
         }
-      &.nakaguro {
+      }
+      &.kome {
         padding-left: 1.5em;
         &::before {
-          content: "・";
+          content: "※";
         }
       }
     }
